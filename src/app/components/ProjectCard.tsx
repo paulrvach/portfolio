@@ -13,7 +13,7 @@ type Props = {
   id: string;
   handleClick: SetStateAction<string>;
   icon: string;
-  background: string
+  background: string;
 };
 
 const ProjectCard = ({
@@ -24,7 +24,7 @@ const ProjectCard = ({
   key,
   id,
   icon,
-  background
+  background,
 }: Props) => {
   return (
     <motion.div
@@ -34,14 +34,21 @@ const ProjectCard = ({
       } flex items-end justify-start min-w-[170px] h-[90vh] transition-[flex] duration-[0.7s] ease-out-flex cursor-pointer bg-slate-600 bg-opacity-10 backdrop-blur-md rounded-xl overflow-hidden`}
       onClick={() => handleClick(id)}
     >
-        <Image alt='bg-image' src={background} fill={true} className='absolute h-full opacity-50'/>
       {active !== id && (
-        <div className='lg:rotate-[270deg] '>
-          <h3 className='flex absolute align-middle items-center px-7 mt-4 gap-4 text-3xl whitespace-nowrap  font-semibold '>
-            <Image src={icon} alt='icon' width={63} height={63} />
-            {title}
-          </h3>
+        <>
+          <Image
+            alt='bg-image'
+            src={background}
+            fill={true}
+            className='absolute h-full opacity-50'
+          />
+          <div className='lg:rotate-[270deg] '>
+            <h3 className='flex absolute align-middle items-center px-7 mt-4 gap-4 text-3xl whitespace-nowrap  font-semibold '>
+              <Image src={icon} alt='icon' width={63} height={63} />
+              {title}
+            </h3>
           </div>
+        </>
       )}
     </motion.div>
   );
