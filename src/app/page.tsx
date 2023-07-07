@@ -8,7 +8,8 @@ import ProjectSection from './sections/ProjectSection';
 
 export default function Home() {
   return (
-    <div className='overflow-x-hidden relative'>
+    <div className='overflow-x-hidden relative '>
+      <div className='absolute h-full w-full -z-50 bg-black'/>
       <Image src={BgGradient} alt='bg' className='absolute -z-10 -top-64' />
 
       <div className='absolute'>

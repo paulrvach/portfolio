@@ -8,7 +8,7 @@ const HeroSection = (props: Props) => {
   return (
     
       <Spotlight>
-        <SpotlightCard className='h-[85vh]'>
+        <SpotlightCard className=''>
           <div className='w-full h-full px-[42px] py-[62px] bg-zinc-400 bg-opacity-5 rounded-3xl border backdrop-blur-lg flex-col justify-between items-start inline-flex'>
             <div className='h-[236px] flex-col justify-start items-start  flex'>
               <div className='flex flex-row items-center'>
