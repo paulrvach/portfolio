@@ -5,7 +5,7 @@ type Props = {};
 
 const NavBar = (props: Props) => {
   return (
-    <nav className='w-screen h-[88px] flex justify-center items-center space-x-12 '>
+    <nav className='w-screen h-[88px] flex justify-center items-center space-x-12 z-50'>
       <a
         href='#'
         className='text-center text-white text-[18px] font-semibold leading-7'
@@ -21,8 +21,8 @@ const NavBar = (props: Props) => {
       <Logo size='76'/>
 
       <a
-        href='#'
-        className='text-center text-white text-[18px] font-semibold leading-7'
+        href='#projects'
+        className='text-center text-white text-[18px] font-semibold cursor-pointer leading-7'
       >
         Projects
       </a>

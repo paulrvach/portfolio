@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { fadeIn } from '../../utils/motion';
 import Image from 'next/image';
 import ProjectPage from './ProjectPage';
+import KafkaNimbus from '../sections/KafkaNimbus'
 
 type Props = {
   title: string;
@@ -14,7 +15,7 @@ type Props = {
   handleClick: React.Dispatch<SetStateAction<string>>;
   icon: string;
   bgGradient: string;
-  url: string
+  url: string;
 };
 
 const ProjectCard = ({
@@ -25,8 +26,14 @@ const ProjectCard = ({
   id,
   icon,
   bgGradient,
-  url
+  url,
 }: Props) => {
+  let activeComponent = <KafkaNimbus />
+
+  // `switch (active) {
+  //   case 'project-1':
+
+  // }`
   return (
     <motion.div
       variants={fadeIn('right', 'spring', 0.5 * index, 0.75)}
@@ -35,9 +42,11 @@ const ProjectCard = ({
       } flex items-end justify-start min-w-[70px] h-[90vh] transition-[flex] duration-[0.7s] ease-out-flex cursor-pointer bg-slate-600 bg-opacity-10 backdrop-blur-md rounded-xl overflow-hidden  before:border-inherit before:h-96 p-2 before:absolute before:-left-40 before:-top-40 before:w-96   before:opacity-20 before:transition-opacity before:duration-500 before:translate-x-[var(--mouse-x)] before:translate-y-[var(--mouse-y)] before:group-hover:opacity-100 before:z-10 before:blur-[100px] before:bg-white before:rounded-full after:absolute after:w-96 after:h-96 after:-left-48 after:-top-48 after:bg-indigo-500 after:rounded-full after:opacity-0 after:pointer-events-none after:transition-opacity after:duration-500 after:translate-x-[var(--mouse-x)] after:translate-y-[var(--mouse-y)] after:hover:opacity-10 after:z-30 after:blur-[100px] border`}
       onClick={() => handleClick(id)}
     >
-      {/* {active !== id && <div className={`${bgGradient} opacity-30 absolute inset-0 -z-10 blur-xl`} />} */}
-      <div className={`${bgGradient} opacity-30 absolute inset-0 -z-10 blur-xl`}/>
-      {active === id &&<ProjectPage url={url}/>}
+      
+      <div
+        className={`${bgGradient} opacity-30 absolute inset-0 -z-10 blur-xl`}
+      />
+      {active === id && activeComponent}
 
       {active !== id && (
         <div className='lg:rotate-[270deg]'>

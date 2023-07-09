@@ -8,7 +8,7 @@ type Props = {};
 const ProjectSection = (props: Props) => {
   const [active, setActive] = useState('project-2');
   return (
-    <div>
+    <div id='projects'>
       <h1 className='text-6xl font-semibold 0'>Projects</h1>
       <Spotlight className='flex lg:flex-row flex-col min-h-[70vh] gap-5 mt-4'>
         {projects.map((project, index) => (
