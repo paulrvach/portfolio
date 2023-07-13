@@ -31,9 +31,30 @@ export default function Spotlight({
   }, [setBoxes]);
 
   useEffect(() => {
+    const onMouseMove = () => {
+      if (containerRef.current) {
+        const rect = containerRef.current.getBoundingClientRect();
+        const { w, h } = containerSize.current;
+        const x = mousePosition.x - rect.left;
+        const y = mousePosition.y - rect.top;
+        const inside = x < w && x > 0 && y < h && y > 0;
+        if (inside) {
+          mouse.current.x = x;
+          mouse.current.y = y;
+          boxes.forEach((box) => {
+            const boxX =
+              -(box.getBoundingClientRect().left - rect.left) + mouse.current.x;
+            const boxY =
+              -(box.getBoundingClientRect().top - rect.top) + mouse.current.y;
+            box.style.setProperty('--mouse-x', `${boxX}px`);
+            box.style.setProperty('--mouse-y', `${boxY}px`);
+          });
+        }
+      }
+    };
     onMouseMove();
-  }, [mousePosition]);
-  
+  }, [mousePosition, boxes]);
+
   const initContainer = () => {
     if (containerRef.current) {
       containerSize.current.w = containerRef.current.offsetWidth;
@@ -41,27 +62,6 @@ export default function Spotlight({
     }
   };
 
-  const onMouseMove = () => {
-    if (containerRef.current) {
-      const rect = containerRef.current.getBoundingClientRect();
-      const { w, h } = containerSize.current;
-      const x = mousePosition.x - rect.left;
-      const y = mousePosition.y - rect.top;
-      const inside = x < w && x > 0 && y < h && y > 0;
-      if (inside) {
-        mouse.current.x = x;
-        mouse.current.y = y;
-        boxes.forEach((box) => {
-          const boxX =
-            -(box.getBoundingClientRect().left - rect.left) + mouse.current.x;
-          const boxY =
-            -(box.getBoundingClientRect().top - rect.top) + mouse.current.y;
-          box.style.setProperty('--mouse-x', `${boxX}px`);
-          box.style.setProperty('--mouse-y', `${boxY}px`);
-        });
-      }
-    }
-  };
   return (
     <div className={className} ref={containerRef}>
       {children}

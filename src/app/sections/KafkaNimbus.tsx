@@ -128,9 +128,9 @@ const KafkaNimbus = (props: Props) => {
               Mapping out the user flow in Figma allowed me and the team to
               visually connect each step, from the initial deployment process to
               the ongoing monitoring and scaling functionalities. I collaborated
-              with the team of developers, leveraging Figma's collaborative
+              with the team of developers, leveraging Figma&apos;s collaborative
               features to gather feedback and iterate on the design. This
-              iterative process ensured that the user flow met the project's
+              iterative process ensured that the user flow met the project&apos;s
               objectives of simplicity and intuitiveness. Additionally, I added
               annotations, comments, and documentation directly within Figma to
               enhance collaboration and serve as a centralized hub for design
@@ -195,7 +195,7 @@ const KafkaNimbus = (props: Props) => {
               Deploying a web application involves various components, from
               seamless CI/CD integration to efficient monitoring solutions. I
               leveraged Vercel, Digital Ocean, and AWS to optimize the
-              deployment and monitoring processes for our web application. Let's
+              deployment and monitoring processes for our web application. Let&apos;s
               dive into the steps I took and the reasoning behind each decision.
             </p>
             <ol className='list-decimal pl-6 mt-4'>
@@ -203,7 +203,7 @@ const KafkaNimbus = (props: Props) => {
                 <strong>Choosing Vercel for Web Application Deployment:</strong>{' '}
                 When it came to deploying our web application, I turned to
                 Vercel for its integrated CI/CD capabilities with Git actions.
-                Vercel's seamless integration allowed the team and me to
+                Vercel&apos;s seamless integration allowed the team and me to
                 automate the deployment process, ensuring that every code change
                 was built, tested, and deployed with ease. With Vercel, we could
                 focus on iterating and improving our application without
@@ -219,8 +219,8 @@ const KafkaNimbus = (props: Props) => {
                 Containerization provided several benefits, including easy
                 scaling and isolation. By containerizing Prometheus and Grafana,
                 I could manage their resources efficiently and ensure reliable
-                monitoring capabilities for our users' Kafka infrastructure.
-                Digital Ocean's robust infrastructure offered a stable and
+                monitoring capabilities for our users&apos; Kafka infrastructure.
+                Digital Ocean&apos;s robust infrastructure offered a stable and
                 secure environment for our monitoring stack.
               </li>
               <li>
@@ -300,7 +300,7 @@ const KafkaNimbus = (props: Props) => {
             <p>
               To establish a structured and efficient workflow, I built out a
               dedicated Notion template tailored to our open-source product
-              development needs. Notion's versatile and customizable features
+              development needs. Notion&apos;s versatile and customizable features
               allowed me to design a template that catered to our Scrum
               environment as well as gave me the option to adapt to the needs of
               the development team. This template served as a foundation for
@@ -311,7 +311,7 @@ const KafkaNimbus = (props: Props) => {
             </h3>
             <p>
               To enhance collaboration and organization among our developers, I
-              leveraged Notion's Kanban board feature within the template. This
+              leveraged Notion&apos;s Kanban board feature within the template. This
               visual board facilitated the management of development tickets,
               enabling the team to track the progress of each task from start to
               completion. The Kanban board acted as a central hub, providing
