@@ -5,6 +5,7 @@ type Props = {
 }
 
 const Logo = ({ size }: Props) => {
+  const strokeW = '3'
   return (
     <svg
         xmlns='http://www.w3.org/2000/svg'
@@ -19,7 +20,7 @@ const Logo = ({ size }: Props) => {
           r='14'
           fill='none'
           stroke='white'
-          strokeWidth='2'
+          strokeWidth={strokeW}
           transform='rotate(-90 38 38)'
         />  
         {/* left circle */}
@@ -29,7 +30,7 @@ const Logo = ({ size }: Props) => {
           r='14'
           fill='none'
           stroke='white'
-          strokeWidth='2'
+          strokeWidth={strokeW}
           transform='rotate(-90 38 38)'
         />
         {/* bottom circle */}
@@ -39,7 +40,7 @@ const Logo = ({ size }: Props) => {
           r='14'
           fill='none'
           stroke='white'
-          strokeWidth='2'
+          strokeWidth={strokeW}
           transform='rotate(-90 38 38)'
         />
         {/* Top Circle */}
@@ -49,7 +50,7 @@ const Logo = ({ size }: Props) => {
           r='14'
           fill='none'
           stroke='white'
-          strokeWidth='2'
+          strokeWidth={strokeW}
           transform='rotate(-90 38 38)'
         />
       </svg>
