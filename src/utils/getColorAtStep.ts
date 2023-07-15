@@ -1,22 +1,27 @@
-export default function getColorAtStep(t: number) {
-  // Define the start and end colors in RGB
-  const startColor = { r: 102, g: 0, b: 204 }; // Deep purple
-  const endColor = { r: 173, g: 216, b: 230 }; // Light blue
+type RGBColor = {
+  r: number;
+  g: number;
+  b: number;
+};
 
-  // Use the cosine function to create a cyclical effect
-  const cycle = (Math.cos(t / 15) + 1) / 2; // This will cycle between 0 and 1
+const colors: RGBColor[] = [
+  { r: 57, g: 255, b: 20 },
+  { r: 255, g: 0, b: 127 },
+  { r: 0, g: 216, b: 255 },
+  { r: 255, g: 121, b: 0 },
+];
 
-  // Function to calculate the interpolated color for the current step
-  const interpolateColor = (cycle: number) => ({
-    r: Math.round(startColor.r + (endColor.r - startColor.r) * cycle),
-    g: Math.round(startColor.g + (endColor.g - startColor.g) * cycle),
-    b: Math.round(startColor.b + (endColor.b - startColor.b) * cycle),
-  });
+function interpolateColor(color1: RGBColor, color2: RGBColor, cycle: number) {
+  return {
+    r: Math.round(color1.r + (color2.r - color1.r) * cycle),
+    g: Math.round(color1.g + (color2.g - color1.g) * cycle),
+    b: Math.round(color1.b + (color2.b - color1.b) * cycle),
+  };
+}
 
-  // Return the interpolated color for the current step
-  return [
-    interpolateColor(cycle).r,
-    interpolateColor(cycle).g,
-    interpolateColor(cycle).b,
-  ];
+export default function getColorAtStep(t: number, i: number) {
+  const index = Math.floor(t / 60) % colors.length;
+  const cycle = (Math.cos(t / 60) + 1) / 2;
+  const color = interpolateColor(colors[index ], colors[(index + 1 ) % colors.length], cycle);
+  return [color.r, color.g, color.b];
 }

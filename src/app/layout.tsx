@@ -1,8 +1,8 @@
 import './globals.css';
-import { Inter } from 'next/font/google';
+import { Space_Mono } from 'next/font/google';
 import { ThemeProvider } from './components/ThemeProvider';
 import Script from 'next/script';
-const inter = Inter({ subsets: ['latin'] });
+const vibes = Space_Mono({ subsets: ['latin'], weight: '400' });
 
 export const metadata = {
   title: 'Paul Vachon',
@@ -17,7 +17,7 @@ export default function RootLayout({
   
   return (
     <html lang='en'>
-      <body className={`${inter.className} `}>
+      <body className={`${vibes.className} `}>
         <ThemeProvider attribute='class' defaultTheme='dark' enableSystem>
           {children}
         </ThemeProvider>

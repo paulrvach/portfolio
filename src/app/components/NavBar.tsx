@@ -47,24 +47,34 @@ const NavBar = (props: Props) => {
                 <li className='grid row-span-2 md:ml-4'>
                   <h5 className='font-semibold text-lg '>Sections</h5>
 
-                  <a className='cursor-pointer hover:text-white' href='#projects'>Projects</a>
+                  <a
+                    className='cursor-pointer hover:text-white'
+                    href='#projects'
+                  >
+                    Projects
+                  </a>
 
-                  <a className='cursor-pointer hover:text-white' href='#contact'>Contact</a>
+                  <a
+                    className='cursor-pointer hover:text-white'
+                    href='#contact'
+                  >
+                    Contact
+                  </a>
 
-                  <a className='cursor-pointer hover:text-white' href='#media'>Media</a>
+                  <a className='cursor-pointer hover:text-white' href='#media'>
+                    Media
+                  </a>
                 </li>
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
         </NavigationMenuList>
-        <GitHubLogoIcon
-          className='h-5 w-5 cursor-pointer'
-          href='www.linkedin.com/in/paul-vachon'
-        />
-        <LinkedInLogoIcon
-          className='h-5 w-5 cursor-pointer'
-          href='https://github.com/paulrvach'
-        />
+        <a href='https://www.linkedin.com/in/paul-vachon' target="_blank">
+          <GitHubLogoIcon className='h-5 w-5 cursor-pointer' />
+        </a>
+        <a href='https://github.com/paulrvach' target="_blank">
+          <LinkedInLogoIcon className='h-5 w-5 cursor-pointer' />
+        </a>
       </NavigationMenu>
     </nav>
   );

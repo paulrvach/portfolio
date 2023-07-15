@@ -6,34 +6,41 @@ import dynamic from 'next/dynamic';
 const Sketch = dynamic(() => import('react-p5'), { ssr: false });
 // import useMousePosition from '../../utils/mouse-position'
 
+type Props = {
+  text: string;
+  i: number
+};
 
-type Props = {};
-
-
-
-const KineticType = (props: Props) => {
+const KineticType = ({ text, i }: Props) => {
   // const mousePosition = useMousePosition()
   const canvasSize = 600;
   const grSize = canvasSize;
   let pg: p5Types.Graphics;
 
   const setup = (p5: p5Types, canvasParentRef: Element) => {
-    p5.createCanvas(canvasSize, canvasSize / 2).parent(canvasParentRef);
+    p5.createCanvas(p5.windowWidth / 1.1, p5.windowHeight / 8).parent(
+      canvasParentRef
+    );
     p5.frameRate(30);
-    pg = p5.createGraphics(grSize, grSize);
+    pg = p5.createGraphics(p5.windowWidth / 1.1, p5.windowHeight / 8);
+  };
+
+  const windowResized = (p5: p5Types) => {
+    p5.resizeCanvas(p5.windowWidth / 1.1, p5.windowHeight / 8);
+    pg = p5.createGraphics(p5.windowWidth / 1.1, p5.windowHeight / 8);
   };
 
   const draw = (p5: p5Types) => {
-    pg.background(8, 9, 8 );
-    const colorArray = getColorAtStep(p5.frameCount);
+    pg.background(8, 9, 8);
+    const colorArray = getColorAtStep(p5.frameCount / 2, i);
     pg.fill(colorArray[0], colorArray[1], colorArray[2]);
-    pg.textFont('Lato')
-    pg.textSize(canvasSize / 4);
+    pg.textFont('Helvetica');
+    pg.textSize(pg.windowWidth / 13);
     pg.push();
-    // pg.translate(grSize / 2, grSize / 2);
     pg.textAlign(p5.LEFT, p5.TOP);
-    pg.textLeading(canvasSize / 8);
-    pg.text('software \nengineer', 0, 0);
+    // pg.textLeading(600);
+    pg.text(text, 50, 0);
+    pg.textStyle('bold')
     pg.pop();
 
     let tilesX = 5;
@@ -66,7 +73,7 @@ const KineticType = (props: Props) => {
 
   return (
     <div className='bg-blend-multiply'>
-      <Sketch setup={setup} draw={draw} />
+      <Sketch setup={setup} draw={draw} windowResized={windowResized} />
     </div>
   );
 };
