@@ -1,16 +1,19 @@
-import React, { FC } from 'react';
+'use client';
+import React, { FC, useRef, useLayoutEffect } from 'react';
 import Sketch from 'react-p5';
 import p5Types from 'p5';
+
 
 interface Props {}
 
 const GradientBackground: FC<Props> = () => {
+
   let gradientStart: p5Types.Color;
   let gradientEnd: p5Types.Color;
   let t: number = 0;
 
   const setup = (p5: p5Types, canvasParentRef: Element) => {
-    p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
+    p5.createCanvas(400, 600).parent(canvasParentRef);
   };
 
   const draw = (p5: p5Types) => {
@@ -64,9 +67,18 @@ const GradientBackground: FC<Props> = () => {
     }
   };
 
+  
+
   return (
-    <div style={{ position: 'fixed', top: 0, left: 0, zIndex: -1 }}>
+    <div
+      style={{ position: 'fixed', top: '15%', left: '40%', zIndex: -1 }}
+      data-scroll
+      data-scroll-speed='0.1'
+      className='saturate-[1.8] '
+      
+    >
       <Sketch setup={setup} draw={draw} windowResized={windowResized} />
+      
     </div>
   );
 };

@@ -10,7 +10,7 @@ type Props = {};
 
 const KafkaNimbus = (props: Props) => {
   return (
-    <div className='w-screen h-full overflow-scroll z-30'>
+    <div className='w-screen h-full overflow-scroll z-30 '>
       <div className='mx-6 my-4 p-4'>
         <article>
           <header>

@@ -14,7 +14,6 @@ type Props = {
   id: string;
   handleClick: React.Dispatch<SetStateAction<string>>;
   icon: string;
-  bgGradient: string;
   url: string;
 };
 
@@ -25,7 +24,6 @@ const ProjectCard = ({
   index,
   id,
   icon,
-  bgGradient,
   url,
 }: Props) => {
   let activeComponent = <KafkaNimbus />
@@ -44,7 +42,7 @@ const ProjectCard = ({
     >
       
       <div
-        className={`${bgGradient} opacity-30 absolute inset-0 -z-10 blur-xl`}
+        className={` opacity-30 absolute inset-0 -z-10 blur-xl`}
       />
       {active === id && activeComponent}
 

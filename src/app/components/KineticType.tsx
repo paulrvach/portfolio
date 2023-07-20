@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useRef } from 'react';
+import React, {useRef} from 'react';
 import p5Types from 'p5';
 import getColorAtStep from '@/utils/getColorAtStep';
 import dynamic from 'next/dynamic';
@@ -8,40 +8,39 @@ const Sketch = dynamic(() => import('react-p5'), { ssr: false });
 
 type Props = {
   text: string;
-  i: number
+  i: number;
 };
 
 const KineticType = ({ text, i }: Props) => {
   // const mousePosition = useMousePosition()
-  const canvasSize = 600;
-  const grSize = canvasSize;
-  let pg: p5Types.Graphics;
+  const pg = useRef<p5Types.Graphics | null>(null);
 
   const setup = (p5: p5Types, canvasParentRef: Element) => {
-    p5.createCanvas(p5.windowWidth / 1.1, p5.windowHeight / 8).parent(
+    p5.createCanvas(window.innerWidth / 2, window.innerHeight / 6).parent(
       canvasParentRef
     );
     p5.frameRate(30);
-    pg = p5.createGraphics(p5.windowWidth / 1.1, p5.windowHeight / 8);
+    pg.current = p5.createGraphics(window.innerWidth / 2, window.innerHeight / 6);
   };
 
   const windowResized = (p5: p5Types) => {
-    p5.resizeCanvas(p5.windowWidth / 1.1, p5.windowHeight / 8);
-    pg = p5.createGraphics(p5.windowWidth / 1.1, p5.windowHeight / 8);
+    p5.resizeCanvas(window.innerWidth / 2, window.innerHeight / 6);
+    pg.current = p5.createGraphics(window.innerWidth / 2, window.innerHeight / 6);
   };
 
   const draw = (p5: p5Types) => {
-    pg.background(8, 9, 8);
-    const colorArray = getColorAtStep(p5.frameCount / 2, i);
-    pg.fill(colorArray[0], colorArray[1], colorArray[2]);
-    pg.textFont('Helvetica');
-    pg.textSize(pg.windowWidth / 13);
-    pg.push();
-    pg.textAlign(p5.LEFT, p5.TOP);
-    // pg.textLeading(600);
-    pg.text(text, 50, 0);
-    pg.textStyle('bold')
-    pg.pop();
+    pg.current?.background(0, 0, 0);
+    // const colorArray = getColorAtStep(p5.frameCount / 2, i);
+    // pg.current?.fill(colorArray[0], colorArray[1], colorArray[2]);
+    pg.current?.fill(255)
+    pg.current?.textFont('Roman');
+    pg.current?.textSize(window.innerWidth / 13);
+    pg.current?.push();
+    pg.current?.textAlign(p5.LEFT, p5.TOP);
+    // pg.current?.textLeading(600);
+    pg.current?.text(text, 0, 20);
+    pg.current?.textStyle('bold');
+    pg.current?.pop();
 
     let tilesX = 5;
     let tilesY = 10;
@@ -65,15 +64,19 @@ const KineticType = ({ text, i }: Props) => {
         let sw = tileW;
         let sh = tileH;
 
-        p5.image(pg, sx, sy, sw, sh, dx, dy, dw, dh);
+        p5.image(pg.current, sx, sy, sw, sh, dx, dy, dw, dh);
       }
     }
-    pg.clear();
+    pg.current?.clear();
   };
 
   return (
-    <div className='bg-blend-multiply'>
-      <Sketch setup={setup} draw={draw} windowResized={windowResized} />
+    <div
+      data-scroll
+      data-scroll-speed='0.3'
+      className='mix-blend-screen'
+    >
+      <Sketch setup={setup} draw={draw}  windowResized={windowResized} />
     </div>
   );
 };

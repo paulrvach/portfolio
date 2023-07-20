@@ -1,30 +1,39 @@
-import React, { useState } from 'react';
+import React, { Dispatch, useState } from 'react';
 import { projects } from '../../utils/projects';
 import ProjectCard from '../components/ProjectCard';
 import Spotlight from '../components/Spotlight';
 
-type Props = {};
+type Props = {
+  image: string;
+  setImage: Dispatch<string>;
+};
 
-const ProjectSection = (props: Props) => {
-  const [active, setActive] = useState('project-2');
+const ProjectSection = ({ setImage }: Props) => {
+  const onHoverHandler = (value: string) => {
+    setImage(value);
+  };
+
   return (
     <div id='projects'>
-      <h1 className='text-6xl font-semibold 0'>Projects</h1>
-      <Spotlight className='flex lg:flex-row flex-col min-h-[70vh] gap-5 mt-4'>
-        {projects.map((project, index) => (
-          <ProjectCard
-            key={project.active}
-            id={project.active}
-            index={index}
-            title={project.title}
-            active={active}
-            handleClick={setActive}
-            icon={project.icon}
-            bgGradient={project.bgGradient}
-            url={project.url}
-          />
+      <h1 className='text-6xl font-semibold mb-8'>Projects</h1>
+      <ul className='h-screen w-8/12'>
+        {projects.map((project) => (
+          <li key={project.active}>
+            <p className='p-0 m-0'>
+              ﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋
+            </p>
+            <a href={`/${project.active}`}>
+              <p
+                onMouseOver={() => onHoverHandler(project.img)}
+                key={project.active}
+                className='text-3xl px-4 pb-2 text-primary transition duration-300 fade-out-50 hover:border-primary cursor-pointer'
+              >
+                {project.title}
+              </p>
+            </a>
+          </li>
         ))}
-      </Spotlight>
+      </ul>
     </div>
   );
 };
