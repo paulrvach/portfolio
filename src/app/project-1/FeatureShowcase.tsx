@@ -43,7 +43,7 @@ const features:Feature[] = [
   },
 ];
 const FeaturesShowcase: React.FC = () => {
-  const featureRefs = useRef([]);
+  const featureRefs = useRef(new Array(features.length));
   const imageRef = useRef(null);
 
   useLayoutEffect(() => {

@@ -1,10 +1,7 @@
 'use client';
 import React, {useRef} from 'react';
 import p5Types from 'p5';
-import getColorAtStep from '@/utils/getColorAtStep';
-import dynamic from 'next/dynamic';
-const Sketch = dynamic(() => import('react-p5'), { ssr: false });
-// import useMousePosition from '../../utils/mouse-position'
+import Sketch from 'react-p5';
 
 type Props = {
   text: string;
@@ -64,7 +61,7 @@ const KineticType = ({ text, i }: Props) => {
         let sw = tileW;
         let sh = tileH;
 
-        p5.image(pg.current, sx, sy, sw, sh, dx, dy, dw, dh);
+        p5.image(pg.current ? pg.current : new p5Types.Element(), sx, sy, sw, sh, dx, dy, dw, dh);
       }
     }
     pg.current?.clear();

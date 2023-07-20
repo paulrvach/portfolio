@@ -1,13 +1,12 @@
 'use client';
 import React, { useLayoutEffect, useRef } from 'react';
 import KineticType from '../components/KineticType';
-import GradientBackground from '../components/P5GraidentBg';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
 type Props = {
   image: string;
 };
+
 
 const HeroSectionDynamix = ({ image }: Props) => {
   const video = useRef(null);
@@ -71,4 +70,4 @@ const HeroSectionDynamix = ({ image }: Props) => {
   );
 };
 
-export default HeroSectionDynamix;
+export default HeroSectionDynamix

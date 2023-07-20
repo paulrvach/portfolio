@@ -3,7 +3,6 @@ import React, { SetStateAction } from 'react';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../utils/motion';
 import Image from 'next/image';
-import ProjectPage from './ProjectPage';
 import KafkaNimbus from '../sections/KafkaNimbus'
 
 type Props = {
