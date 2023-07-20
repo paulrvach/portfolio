@@ -1,7 +1,7 @@
-'use client'
+'use client';
 import React from 'react';
 import Logo from './Logo';
-import { cn } from '@/lib/utils';
+import Link from 'next/link'
 import Image from 'next/image';
 import {
   NavigationMenu,
@@ -21,10 +21,13 @@ type Props = {};
 const NavBar = (props: Props) => {
   return (
     <nav className='fixed w-full px-8 h-[88px] flex justify-between items-center space-x-12 z-50'>
-      <div className='flex items-center gap-1 text-lg align-middle'>
+      <Link
+        className='flex items-center gap-1 text-lg align-middle cursor-pointer'
+        href='/'
+      >
         <Logo size='28' />
         <p className='pb-1'>paul vachon</p>
-      </div>
+      </Link>
       <NavigationMenu className='gap-2 bg-transparent'>
         <NavigationMenuList>
           <NavigationMenuItem>
@@ -70,10 +73,10 @@ const NavBar = (props: Props) => {
             </NavigationMenuContent>
           </NavigationMenuItem>
         </NavigationMenuList>
-        <a href='https://www.linkedin.com/in/paul-vachon' target="_blank">
+        <a href='https://www.linkedin.com/in/paul-vachon' target='_blank'>
           <GitHubLogoIcon className='h-5 w-5 cursor-pointer' />
         </a>
-        <a href='https://github.com/paulrvach' target="_blank">
+        <a href='https://github.com/paulrvach' target='_blank'>
           <LinkedInLogoIcon className='h-5 w-5 cursor-pointer' />
         </a>
       </NavigationMenu>
