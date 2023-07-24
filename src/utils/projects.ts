@@ -3,6 +3,9 @@ export type Project = {
   active: string;
   icon: string;
   img: string;
+  description: string;
+  tech: string[];
+  demo: string;
 };
 
 export type Feature = {
@@ -18,24 +21,39 @@ export const projects: Project[] = [
     title: 'Real-Estate Cash-Flow analysis',
     icon: 'https://res.cloudinary.com/dxmqknhgj/image/upload/v1689299889/map_u947dr.png',
     img: 'https://res.cloudinary.com/dxmqknhgj/image/upload/v1689627776/Asset_aqe1sx.png',
+    description:
+      'Discover location-based residential real estate opportunities, tailored to your unique goals and requirements, right from the comfort of your computer.',
+    tech: ['React', 'API', 'Maps'],
+    demo: '',
   },
   {
     active: 'project-2',
     title: 'Kafka Nimbus',
     icon: 'https://res.cloudinary.com/dxmqknhgj/image/upload/v1689299889/kafka_x8ok4n.png',
     img: 'https://res.cloudinary.com/dxmqknhgj/image/upload/v1689628209/kakamain_p2yzmu.png',
+    description:
+      'Kafka Nimbus is an open-source tool that simplifies Kafka operations by streamlining the deployment, management, and scaling of clusters via an intuitive graphical interface.',
+    tech: ['Next13', 'AWS', 'Kafka'],
+    demo: 'https://kafka-nimbus.vercel.app/',
   },
   {
     active: 'project-3',
     title: 'AI Voice Conversation App',
     icon: 'https://res.cloudinary.com/dxmqknhgj/image/upload/v1689299890/mic_c13g9q.png',
     img: 'https://res.cloudinary.com/dxmqknhgj/image/upload/v1689643516/Jarvis_tz3jkx.png',
+    description:
+      'A dynamic app that fosters real-time voice interaction with AI, offering an intuitive platform for engaging conversations.',
+    tech: ['Audio', 'AWS', 'GPT-3.5'],
+    demo: '',
   },
   {
     active: 'project-4',
     title: 'Pokemon Collection',
     icon: 'https://res.cloudinary.com/dxmqknhgj/image/upload/v1689299889/collections_igbicn.png',
     img: '',
+    description: '',
+    tech: ['Express', 'Node', 'PostgreSQL'],
+    demo: '',
   },
 ];
 

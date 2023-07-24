@@ -18,7 +18,7 @@ const Project2 = (props: Props) => {
 
   return (
     <div className='overflow-x-hidden relative bg-black'>
-      <div className=' mx-24'>
+      <div className=' md:mx-24'>
       <div
         data-scroll
         data-scroll-speed='0.2'

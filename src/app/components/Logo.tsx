@@ -12,6 +12,7 @@ const Logo = ({ size }: Props) => {
         width= {size}
         height={size}
         viewBox='0 0 76 76'
+        className='inline-block'
       >
         {/* right circle */}
         <circle

@@ -15,13 +15,11 @@ const FeaturesShowcase = ({ features }: Props) => {
   });
 
   return (
-    <div className='flex flex-row items-center  w-full'>
-      <div id='features' className='flex flex-wrap flex-col w-full mb-48'>
+      <div id='features' className='flex  flex-col w-full mb-48'>
         {features.map((feature, index) => (
           <FeatureCard feature={feature} key={index} index={index}/>
         ))}
       </div>
-    </div>
   );
 };
 

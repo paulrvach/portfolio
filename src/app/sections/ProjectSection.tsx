@@ -1,37 +1,36 @@
 import React, { Dispatch, useState } from 'react';
 import { projects } from '../../utils/projects';
 import ProjectCard from '../components/ProjectCard';
-import Spotlight from '../components/Spotlight';
+import { QuestionMarkCircledIcon, ArrowTopLeftIcon } from '@radix-ui/react-icons';
 
-type Props = {
-  image: string;
-  setImage: Dispatch<string>;
-};
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
 
-const ProjectSection = ({ setImage }: Props) => {
-  const onHoverHandler = (value: string) => {
-    setImage(value);
-  };
+type SectionProps = {};
 
+const ProjectSection = ({}: SectionProps) => {
   return (
     <div id='projects'>
-      <h1 className='text-6xl font-semibold mb-8'>Projects</h1>
-      <ul className='h-screen w-8/12'>
+      <h1 className='text-3xl font-semibold mb-4 px-4'>
+        Featured Projects
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger>
+              <QuestionMarkCircledIcon className='inline-block w-3 h-3 mb-5' />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p><ArrowTopLeftIcon className='inline-block w-3 h-3'/> Click card for more details</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      </h1>
+      <ul className='flex flex-wrap justify-between'>
         {projects.map((project) => (
-          <li key={project.active}>
-            <p className='p-0 m-0'>
-              ﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋﹋
-            </p>
-            <a href={`/${project.active}`}>
-              <p
-                onMouseOver={() => onHoverHandler(project.img)}
-                key={project.active}
-                className='text-3xl px-4 pb-2 text-primary transition duration-300 fade-out-50 hover:border-primary cursor-pointer'
-              >
-                {project.title}
-              </p>
-            </a>
-          </li>
+          <ProjectCard key={project.active} project={project} />
         ))}
       </ul>
     </div>

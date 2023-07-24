@@ -13,16 +13,16 @@ const KineticType = ({ text, i }: Props) => {
   const pg = useRef<p5Types.Graphics | null>(null);
 
   const setup = (p5: p5Types, canvasParentRef: Element) => {
-    p5.createCanvas(window.innerWidth / 2, window.innerHeight / 6).parent(
+    p5.createCanvas(window.innerWidth , window.innerHeight / 10).parent(
       canvasParentRef
     );
     p5.frameRate(30);
-    pg.current = p5.createGraphics(window.innerWidth / 2, window.innerHeight / 6);
+    pg.current = p5.createGraphics(window.innerWidth , window.innerHeight / 10);
   };
 
   const windowResized = (p5: p5Types) => {
-    p5.resizeCanvas(window.innerWidth / 2, window.innerHeight / 6);
-    pg.current = p5.createGraphics(window.innerWidth / 2, window.innerHeight / 6);
+    p5.resizeCanvas(window.innerWidth , window.innerHeight / 10);
+    pg.current = p5.createGraphics(window.innerWidth , window.innerHeight / 10);
   };
 
   const draw = (p5: p5Types) => {
@@ -31,11 +31,11 @@ const KineticType = ({ text, i }: Props) => {
     // pg.current?.fill(colorArray[0], colorArray[1], colorArray[2]);
     pg.current?.fill(255)
     pg.current?.textFont('Roman');
-    pg.current?.textSize(window.innerWidth / 13);
+    pg.current?.textSize(window.innerWidth / 24);
     pg.current?.push();
-    pg.current?.textAlign(p5.LEFT, p5.TOP);
+    pg.current?.textAlign(p5.CENTER, p5.CENTER);
     // pg.current?.textLeading(600);
-    pg.current?.text(text, 0, 20);
+    pg.current?.text(text, p5.width / 2, p5.height / 2);
     pg.current?.textStyle('bold');
     pg.current?.pop();
 

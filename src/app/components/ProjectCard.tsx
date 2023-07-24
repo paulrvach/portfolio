@@ -1,59 +1,88 @@
-import React, { SetStateAction } from 'react';
+'use client';
+/* eslint-disable @next/next/no-img-element */
+import React, { useState } from 'react';
+import { projects } from '../../utils/projects';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { ArrowTopRightIcon } from '@radix-ui/react-icons';
 
-import { motion } from 'framer-motion';
-import { fadeIn } from '../../utils/motion';
-import Image from 'next/image';
-import KafkaNimbus from '../sections/KafkaNimbus'
-
-type Props = {
-  title: string;
-  active: string;
-  key: string;
-  index: number;
-  id: string;
-  handleClick: React.Dispatch<SetStateAction<string>>;
-  icon: string;
-  url: string;
+type CardProps = {
+  project: (typeof projects)[0];
 };
 
-const ProjectCard = ({
-  title,
-  active,
-  handleClick,
-  index,
-  id,
-  icon,
-  url,
-}: Props) => {
-  let activeComponent = <KafkaNimbus />
+const ProjectCard = ({ project }: CardProps) => {
+  const [demo, setDemo] = useState(false);
 
-  // `switch (active) {
-  //   case 'project-1':
+  const onHoverHander = () => {
+    setDemo(true);
+  };
 
-  // }`
+  const onLeaveHandler = () => {
+    setDemo(false);
+  };
+
+  const onClickHandler = () => {};
+
   return (
-    <motion.div
-      variants={fadeIn('right', 'spring', 0.5 * index, 0.75)}
-      className={` relative ${
-        active === id ? 'lg:flex-[4.5] flex-[10]' : 'lg:flex-[0.5] flex-[2]'
-      } flex items-end justify-start min-w-[70px] h-[90vh] transition-[flex] duration-[0.7s] ease-out-flex cursor-pointer bg-slate-600 bg-opacity-10 backdrop-blur-md rounded-xl overflow-hidden  before:border-inherit before:h-96 p-2 before:absolute before:-left-40 before:-top-40 before:w-96   before:opacity-20 before:transition-opacity before:duration-500 before:translate-x-[var(--mouse-x)] before:translate-y-[var(--mouse-y)] before:group-hover:opacity-100 before:z-10 before:blur-[100px] before:bg-white before:rounded-full after:absolute after:w-96 after:h-96 after:-left-48 after:-top-48 after:bg-indigo-500 after:rounded-full after:opacity-0 after:pointer-events-none after:transition-opacity after:duration-500 after:translate-x-[var(--mouse-x)] after:translate-y-[var(--mouse-y)] after:hover:opacity-10 after:z-30 after:blur-[100px] border`}
-      onClick={() => handleClick(id)}
-    >
-      
-      <div
-        className={` opacity-30 absolute inset-0 -z-10 blur-xl`}
-      />
-      {active === id && activeComponent}
-
-      {active !== id && (
-        <div className='lg:rotate-[270deg]'>
-          <h3 className='flex absolute align-middle items-center px-7 mt-4 gap-4 text-3xl whitespace-nowrap '>
-            <Image src={icon} alt='icon' width={63} height={63} />
-            {title}
-          </h3>
-        </div>
-      )}
-    </motion.div>
+    <li className='w-full md:w-1/2 lg:w-1/4 mb-4 px-2 '>
+      <a
+        href={`/${project.active}`}
+        onMouseOver={onHoverHander}
+        onMouseLeave={onLeaveHandler}
+      >
+        <Card className='border-0 '>
+          <CardHeader className='p-2 '>
+            <div className='relative'>
+              <img
+                src={project.img}
+                alt={project.active}
+                className='rounded-md transition duration-100 hover:-translate-y-2'
+              />
+              {demo ? (
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger className='absolute bottom-3 transition-all duration-100 right-1'>
+                      <Button variant={'secondary'} onClick={onClickHandler}>
+                        <ArrowTopRightIcon className='w-4 h-4' />
+                        Demo
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>{project.demo}</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              ) : null}
+            </div>
+            <CardFooter className='p-0 gap-2 pb-2'>
+              {project.tech.map((badge) => (
+                <Badge variant='default' key={badge}>
+                  {badge}
+                </Badge>
+              ))}
+            </CardFooter>
+            <CardTitle className='text-lg'>{project.title}</CardTitle>
+            <CardDescription className='text-xs'>
+              {project.description}
+            </CardDescription>
+          </CardHeader>
+        </Card>
+      </a>
+    </li>
   );
 };
 

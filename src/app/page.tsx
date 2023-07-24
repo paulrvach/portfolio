@@ -20,10 +20,10 @@ export default function Home() {
 
   return (
     <div className='overflow-x-hidden relative '>
-      <div className='absolute h-full w-full -z-50 bg-black' />
-      <div className='space-y-24 mx-8'>
+      <div className='absolute h-full w-full -z-50 bg-black ' />
+      <div className='space-y-24 '>
         <HeroSectionDynamix image={image} />
-        <ProjectSection image={image} setImage={setImage} />
+        <ProjectSection />
       </div>
     </div>
   );

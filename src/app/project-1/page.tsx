@@ -25,7 +25,7 @@ const ProjectOnePage = (props: Props) => {
         <Image src={typography} alt='bg-svg' className='opacity-10' />
         <Image src={typography} alt='bg-svg' className='opacity-10' />
       </div>
-      <div className='hero min-h-screen '>
+      <div className='hero min-h-screen mt-24 md:mt-0'>
         <div className='hero-content flex-col lg:flex-row'>
           <div className='max-w-md' data-scroll data-scroll-speed='0.2' >
             <div className='flex items-center justify-start gap-4'>

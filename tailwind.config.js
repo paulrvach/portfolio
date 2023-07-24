@@ -26,6 +26,14 @@ module.exports = {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
         },
+
+        pastelPink: '#FFD1DC',
+        pastelBlue: '#A2D2FF',
+        pastelGreen: '#A7F3D0',
+        pastelPurple: '#C7D2FE',
+        pastelYellow: '#FDE68A',
+        pastelOrange: '#FFD8A8',
+
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
           foreground: 'hsl(var(--secondary-foreground))',
