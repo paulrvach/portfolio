@@ -69,8 +69,6 @@ const KineticType = ({ text, i }: Props) => {
 
   return (
     <div
-      data-scroll
-      data-scroll-speed='0.3'
       className='mix-blend-screen'
     >
       <Sketch setup={setup} draw={draw}  windowResized={windowResized} />

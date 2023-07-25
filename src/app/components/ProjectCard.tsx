@@ -19,6 +19,7 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowTopRightIcon } from '@radix-ui/react-icons';
+import Link from 'next/link';
 
 type CardProps = {
   project: (typeof projects)[0];
@@ -56,10 +57,12 @@ const ProjectCard = ({ project }: CardProps) => {
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger className='absolute bottom-3 transition-all duration-100 right-1'>
-                      <Button variant={'secondary'} onClick={onClickHandler}>
+                      <Link href={project.demo}>
+                      <Button variant={'secondary'} >
                         <ArrowTopRightIcon className='w-4 h-4' />
                         Demo
                       </Button>
+                      </Link>
                     </TooltipTrigger>
                     <TooltipContent>
                       <p>{project.demo}</p>

@@ -28,7 +28,7 @@ const ProjectSection = ({}: SectionProps) => {
           </Tooltip>
         </TooltipProvider>
       </h1>
-      <ul className='flex flex-wrap justify-between'>
+      <ul className='flex flex-wrap justify-between' >
         {projects.map((project) => (
           <ProjectCard key={project.active} project={project} />
         ))}

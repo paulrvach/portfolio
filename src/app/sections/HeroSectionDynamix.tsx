@@ -11,7 +11,7 @@ import {
   Space_Mono,
   Luxurious_Roman,
 } from 'next/font/google';
-import Logo from '../components/Logo';
+import { stagger } from 'framer-motion';
 
 const mainText = DM_Sans({ subsets: ['latin'], weight: '400' });
 const spaceMono = Eczar({ subsets: ['latin'], weight: '600' });
@@ -25,65 +25,62 @@ type Props = {
 };
 
 const HeroSectionDynamix = ({ image }: Props) => {
-  const video = useRef(null);
-
-  const stars = ['⋆', '⋆', '⋆', '⋆', '⋆', '⋆', '⋆', '⋆', '⋆'];
+  const spansRef = useRef(null);
 
   useLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+    let ctx = gsap.context(() => {
+      // use scoped selectors
+      gsap.from('.anim', { y: 100, stagger: 0.2 });
+      // or refs
+    }, spansRef);
 
-    const timeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: document.documentElement,
-        start: 'top',
-        markers: true,
-        end: '+=50px',
-        scrub: true,
-      },
-    });
-
-    timeline.from(video.current, {
-      clipPath: 'inset(150px 100px)',
-      top: '23%',
-      left: '43%',
-    });
+    return () => ctx.revert();
   });
 
   return (
     <>
-      <div className=' h-[65vh] w-full p-8 gap-4 rounded-3xl flex flex-col justify-center items-center '>
+      <div
+        className=' h-[85vh] w-full p-8 gap-4 rounded-3xl flex flex-col justify-center items-center -mt-10'
+        ref={spansRef}
+      >
         <h1
-          className={`${mainText.className} text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-normal text-justify w-full sm:w-3/4 md:w-2/3 leading-normal sm:leading-[2rem] md:leading-[3rem] lg:leading-[4rem] mt-10 sm:mt-20 md:mt-32 lg:mt-48 cursor-pointer`}
+          className={`${mainText.className}   text-xl sm:text-2xl md:text-3xl overflow-hidden lg:text-4xl xl:text-5xl font-normal text-justify w-full sm:w-3/4 md:w-2/3 leading-normal sm:leading-[2rem] md:leading-[3rem] lg:leading-[4rem] mt-10 sm:mt-10 md:mt-20 lg:mt-32 cursor-pointer`}
         >
-          <span
-            className={`${rubik.className} text-pastelOrange hover:text-pastelYellow transition-colors duration-500`}
-          >
-            Welcome
-          </span>{' '}
-          to my portfolio. I&apos;m
-          <span
-            className={`${luxuriousRoman.className} `}
-          >
-            {' '}Paul
-          </span>
+          <div className='overflow-hidden inline-block -mb-2'>
+            <div
+              className={`${rubik.className} anim text-pastelOrange hover:text-pastelYellow transition-colors duration-500`}
+            >
+              Welcome
+            </div>
+          </div>{' '}
+          to my portfolio. I&apos;m{' '}
+          <div className='overflow-hidden inline-block -mb-2'>
+            <div className={` anim ${luxuriousRoman.className} `}>Paul</div>
+          </div>
           , and this is where I share my passion about{' '}
-          <span
-            className={`${roboto.className} text-pastelPink hover:text-pastelPurple transition-colors duration-500`}
-          >
-            programming
-          </span>{' '}
+          <div className='overflow-hidden inline-block -mb-2'>
+            <div
+              className={`anim ${roboto.className} text-pastelPink hover:text-pastelPurple transition-colors duration-500`}
+            >
+              programming
+            </div>
+          </div>{' '}
           and{' '}
-          <span
-            className={`${spaceMono.className} text-pastelBlue hover:text-pastelGreen transition-colors duration-500`}
-          >
-            design
-          </span>
+          <div className='overflow-hidden inline-block -mb-2'>
+            <div
+              className={` anim ${spaceMono.className} text-pastelBlue hover:text-pastelGreen transition-colors duration-500`}
+            >
+              design
+            </div>
+          </div>
           . I believe in a{' '}
-          <span
-            className={`${inconsolata.className} text-pastelGreen hover:text-pastelYellow transition-colors duration-500`}
-          >
-            practical
-          </span>{' '}
+          <div className='overflow-hidden inline-block -mb-2'>
+            <div
+              className={` anim ${inconsolata.className} text-pastelGreen hover:text-pastelYellow transition-colors duration-500`}
+            >
+              practical
+            </div>
+          </div>{' '}
           approach, so here I document my latest explorations.
         </h1>
       </div>

@@ -22,7 +22,9 @@ export default function Home() {
     <div className='overflow-x-hidden relative '>
       <div className='absolute h-full w-full -z-50 bg-black ' />
       <div className='space-y-24 '>
-        <HeroSectionDynamix image={image} />
+        <div data-scroll data-scroll-speed='0.2'>
+          <HeroSectionDynamix image={image} />
+        </div>
         <ProjectSection />
       </div>
     </div>
