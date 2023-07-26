@@ -146,3 +146,27 @@ export const projectTwoFeatures: Feature[] = [
     emoji: '',
   },
 ];
+
+export const projectThreeFeatures: Feature[] = [
+  {
+    title: 'Webpack Configuration',
+    description:
+      'I configured Webpack and utilized relevant plugins (auto-prefixer and HTMLhotloader) to enable live previewing during development, bundle front-end dependencies to enhance website loading, and package the application for deployment.',
+    img: 'https://webpack.js.org/assets/icon-square-big.svg',
+    emoji: '',
+  },
+  {
+    title: 'Microservices Integration',
+    description:
+      'I developed an inclusive and accessible solution by leveraging microservices (AWS Polly, AWS Transcribe, and S3) to enable storage of user audio files, speech-to-text transcription, and text-to-speech conversation, integrating with large language models and enhancing the conversational experience.',
+    img: 'https://res.cloudinary.com/practicaldev/image/fetch/s--v2yVlYw_--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/mghq0enhh1y85t76q1wf.png',
+    emoji: '',
+  },
+  {
+    title: 'UI/UX Development',
+    description:
+      'I designed visually appealing UI/UX components using React, Tailwind CSS, and the DaisyUI component library, facilitating rapid implementation while ensuring consistency and adherence to ARIA accessibility guidelines.',
+    img: 'https://raw.githubusercontent.com/saadeghi/files/main/daisyui3/banner.png',
+    emoji: '',
+  },
+];

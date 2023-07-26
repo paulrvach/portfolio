@@ -2,20 +2,19 @@
 import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
-import Image from 'next/image';
 import FeaturesShowcase from '../components/FeatureShowcase';
-import { projectTwoFeatures } from '@/utils/projects';
+import { projectThreeFeatures } from '@/utils/projects';
+import Image from 'next/image';
 
 type Props = {};
 
-const Project2 = (props: Props) => {
+const ProjectThree = (props: Props) => {
   useEffect(() => {
     (async () => {
       const LocomotiveScroll = (await import('locomotive-scroll')).default;
       const locomotiveScroll = new LocomotiveScroll();
     })();
   });
-
   return (
     <div className='overflow-x-hidden relative bg-black'>
       <div className=' md:mx-24'>
@@ -25,36 +24,36 @@ const Project2 = (props: Props) => {
           className='hero-content flex-col lg:flex-row gap-6 h-screen '
         >
           <div className='scale-[0.8]'>
-            <video
-              width='100%'
-              height='100%'
-              autoPlay
-              playsInline
-              loop
-              className='mb-6 rounded-lg'
-            >
-              <source src='https://res.cloudinary.com/dpqdqryvo/video/upload/v1685814776/test-demo-kafka_szbixp.mov' />
-            </video>
+            <Image 
+            src='https://res.cloudinary.com/dxmqknhgj/image/upload/v1689643516/Jarvis_tz3jkx.png'
+            alt='JARVIS'
+            width={1440}
+            height={1024}
+            className='rounded-xl'
+            />
+
           </div>
           <div className='max-w-md'>
-            <div className='flex items-center justify-start gap-4 whitespace-nowrap'>
+            <div className='flex items-center justify-start gap-4 '>
               <Image
-                src='https://res.cloudinary.com/dxmqknhgj/image/upload/v1688926766/kafka-nimbus-logo_lwqint.png'
+                src='https://res.cloudinary.com/dxmqknhgj/image/upload/v1689299890/mic_c13g9q.png'
                 alt='asset-logo'
                 className=''
                 height={46}
                 width={46}
               />
-              <h1 className='text-5xl font-bold'>Kafka Nimbus</h1>
+              <h1 className='text-5xl font-bold'>Ai Voice Converstion App</h1>
             </div>
             <p className='py-6'>
-              Kafka Nimbus is an intuitive web application designed to simplify
-              the configuration, deployment, monitoring, and management of Kafka
-              on the cloud. This robust platform abstracts the complexities of
-              Kafka operations, presenting a real-time dashboard for health and
-              performance monitoring. Kafka Nimbus ensures that big data
-              operations are accessible, efficient, and proactive, catering to
-              businesses of all sizes.
+              The AI Voice Conversation App, also known as Campa, is an
+              innovative conversational application utilizing advanced AI and
+              microservices. The application leverages AWS Polly, AWS
+              Transcribe, and S3 to store user audio files, convert speech to
+              text, and facilitate text-to-speech conversation, thereby
+              augmenting the conversational experience. It&apos;s enhanced with a
+              visually appealing, accessible UI designed with React, Tailwind
+              CSS, and the DaisyUI component library, adhering to ARIA
+              accessibility guidelines.
             </p>
 
             <div className='flex gap-4'>
@@ -67,10 +66,10 @@ const Project2 = (props: Props) => {
           </div>
         </div>
         <h2 className='text-5xl ml-16'>Features</h2>
-        <FeaturesShowcase features={projectTwoFeatures} />
+        <FeaturesShowcase features={projectThreeFeatures} />
       </div>
     </div>
   );
 };
 
-export default Project2;
+export default ProjectThree;

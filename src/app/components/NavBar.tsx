@@ -26,7 +26,9 @@ const NavBar = (props: Props) => {
         href='/'
       >
         <Logo size='28' />
-        <p className='pb-1 whitespace-nowrap hover:text-white text-slate-400'>paul vachon</p>
+        <p className='pb-1 whitespace-nowrap hover:text-white text-slate-400'>
+          paul vachon
+        </p>
       </Link>
       <NavigationMenu className='gap-2 bg-transparent'>
         <NavigationMenuList>
@@ -51,18 +53,18 @@ const NavBar = (props: Props) => {
                   </NavigationMenuLink>
                 </li>
                 <li className='grid row-span-2 md:ml-4'>
+                  <div>
                   <h5 className='font-semibold text-lg   border-b-2'>
                     Sections
                   </h5>
-
-                  <a
-                    className='cursor-pointer hover:text-white'
-                    href='#projects'
-                  >
-                    Projects
-                  </a>
-
-                  <a
+                    <Link
+                      className='cursor-pointer hover:text-white items-start align-top'
+                      href='/#projects'
+                    >
+                      Projects
+                    </Link>
+                  </div>
+                  {/* <a
                     className='cursor-pointer hover:text-white'
                     href='#contact'
                   >
@@ -71,7 +73,7 @@ const NavBar = (props: Props) => {
 
                   <a className='cursor-pointer hover:text-white' href='#media'>
                     Media
-                  </a>
+                  </a> */}
                 </li>
               </ul>
             </NavigationMenuContent>
