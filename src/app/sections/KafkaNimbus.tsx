@@ -10,19 +10,9 @@ type Props = {};
 
 const KafkaNimbus = (props: Props) => {
   return (
-    <div className='w-screen h-full overflow-scroll z-30 '>
-      <div className='mx-6 my-4 p-4'>
+    <div className='w-full h-full overflow-scroll z-30 '>
+      <div className='my-4 '>
         <article>
-          <header>
-            <h1 className='text-4xl mb-4 flex gap-2'>
-              <Image
-                src='https://res.cloudinary.com/dxmqknhgj/image/upload/v1688926766/kafka-nimbus-logo_lwqint.png'
-                alt='Kafka Nimbus Logo'
-                width={40}
-                height={40}
-              />
-              Kafka Nimbus
-            </h1>
             <video
               width='100%'
               height='100%'
@@ -33,49 +23,9 @@ const KafkaNimbus = (props: Props) => {
             >
               <source src='https://res.cloudinary.com/dpqdqryvo/video/upload/v1685814776/test-demo-kafka_szbixp.mov' />
             </video>
-          </header>
           <div className=''>
             <div className='mb-4'>
-              <div className='grid grid-cols-2 gap-4 py-4'>
-                <div className=''>
-                  <strong className='text-xl'>Application:</strong>
-                  <Link
-                    href='https://kafka-nimbus.vercel.app/'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='underline flex items-center'
-                  >
-                    <div className='mr-2 py-2'>
-                      <Image
-                        src='https://res.cloudinary.com/dxmqknhgj/image/upload/v1688926766/kafka-nimbus-logo_lwqint.png'
-                        alt='Kafka Nimbus Logo'
-                        width={24}
-                        height={24}
-                      />
-                    </div>
-                    Kafka Nimbus
-                  </Link>
-                </div>
-                <div className=''>
-                  <strong className='text-xl'>GitHub:</strong>
-                  <Link
-                    href='https://github.com/oslabs-beta/Kafka-Nimbus'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='underline flex items-center'
-                  >
-                    <div className='mr-2 py-2 '>
-                      <Image
-                        src='https://avatars.githubusercontent.com/u/49566968?s=48&v=4'
-                        alt='Github Repo'
-                        width={24}
-                        height={24}
-                      />
-                    </div>
-                    OSLabs Repository
-                  </Link>
-                </div>
-              </div>
+             
             </div>
             <h2 className='text-4xl font-bold mb-4'>What it does</h2>
             <p>

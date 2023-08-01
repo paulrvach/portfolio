@@ -13,7 +13,7 @@ import {
 } from 'next/font/google';
 import { stagger } from 'framer-motion';
 
-const mainText = DM_Sans({ subsets: ['latin'], weight: '400' });
+export const mainText = DM_Sans({ subsets: ['latin'], weight: '400' });
 const spaceMono = Eczar({ subsets: ['latin'], weight: '600' });
 const roboto = Roboto_Mono({ subsets: ['latin'], weight: '600' });
 const rubik = Rubik({ subsets: ['latin'], weight: '600' });
@@ -40,7 +40,7 @@ const HeroSectionDynamix = ({ image }: Props) => {
   return (
     <>
       <div
-        className=' h-[85vh] w-full p-8 gap-4 rounded-3xl flex flex-col justify-center items-center -mt-10'
+        className=' h-[85vh] w-full p-8 gap-4 rounded-3xl flex flex-col justify-center items-center -mt-10 '
         ref={spansRef}
       >
         <h1

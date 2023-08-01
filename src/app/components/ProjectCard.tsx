@@ -60,7 +60,7 @@ const ProjectCard = ({ project }: CardProps) => {
                       <Link href={project.demo}>
                       <Button variant={'secondary'} >
                         <ArrowTopRightIcon className='w-4 h-4' />
-                        Demo
+                        {'  '}Learn More
                       </Button>
                       </Link>
                     </TooltipTrigger>

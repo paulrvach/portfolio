@@ -15,6 +15,11 @@ module.exports = {
         '2xl': '1400px',
       },
     },
+    variants: {
+      extend: {
+        backdropFilter: ['responsive'], // if needed
+      },
+    },
     extend: {
       colors: {
         border: 'hsl(var(--border))',
@@ -33,6 +38,14 @@ module.exports = {
         pastelPurple: '#C7D2FE',
         pastelYellow: '#FDE68A',
         pastelOrange: '#FFD8A8',
+
+        backgroundColor: {
+          glass: 'rgba(255, 255, 255, 0.1)',
+        },
+        backdropFilter: {
+          none: 'none',
+          blur: 'blur(20px)',
+        },
 
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
@@ -80,5 +93,10 @@ module.exports = {
       },
     },
   },
-  plugins: [require('daisyui'), require('tailwindcss-animate')],
+  plugins: [
+    require('daisyui'),
+    require('tailwindcss-animate'),
+    require('tailwindcss-filters'),
+    require('@tailwindcss/forms'),
+  ],
 };
