@@ -1,9 +1,11 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import ProjectSection from './sections/ProjectSection';
 import ContactSection from './sections/ContactSection';
 import dynamic from 'next/dynamic';
 import Spotlight, { SpotlightCard } from './components/Spotlight';
+import { Toaster } from "@/components/ui/toaster"
+
 const HeroSectionDynamix = dynamic(
   () => import('./sections/HeroSectionDynamix'),
   { ssr: false }
@@ -30,7 +32,10 @@ export default function Home() {
           </div>
         </Spotlight>
         <ProjectSection />
+        <div data-scroll data-scroll-speed='0.2'>
         <ContactSection />
+        </div>
+        <Toaster />
       </div>
     </div>
   );

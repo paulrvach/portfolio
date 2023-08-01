@@ -11,6 +11,7 @@ import {
 type Props = {};
 
 const ContactSection = (props: Props) => {
+
   return (
     <div
       id='contact'
