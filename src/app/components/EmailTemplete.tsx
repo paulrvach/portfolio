@@ -96,7 +96,7 @@ export const ConfirmationEmail = ({
                 <Button>
                   <Link
                     className='text-sm'
-                    href='https://paul-vachon.vercel.app/'
+                    href='https://paulvachon.dev/'
                   >
                     Visit my website
                   </Link>

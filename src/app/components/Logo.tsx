@@ -20,7 +20,7 @@ const Logo = ({ size }: Props) => {
           cy='54'
           r='14'
           fill='none'
-          stroke='white'
+          stroke='#475569'
           strokeWidth={strokeW}
           transform='rotate(-90 38 38)'
         />  
@@ -30,7 +30,7 @@ const Logo = ({ size }: Props) => {
           cy='24'
           r='14'
           fill='none'
-          stroke='white'
+          stroke='#475569'
           strokeWidth={strokeW}
           transform='rotate(-90 38 38)'
         />
@@ -40,7 +40,7 @@ const Logo = ({ size }: Props) => {
           cy='39'
           r='14'
           fill='none'
-          stroke='white'
+          stroke='#475569'
           strokeWidth={strokeW}
           transform='rotate(-90 38 38)'
         />
@@ -50,7 +50,7 @@ const Logo = ({ size }: Props) => {
           cy='39'
           r='14'
           fill='none'
-          stroke='white'
+          stroke='#475569'
           strokeWidth={strokeW}
           transform='rotate(-90 38 38)'
         />

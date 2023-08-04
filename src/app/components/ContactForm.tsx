@@ -56,7 +56,7 @@ export default function Example() {
     try {
       toast({
         description: (
-          <p className='inline p-4 my-4'>
+          <p className='inline p-4 my-4 text-slate-600'>
             <EnvelopeClosedIcon className='h-4 w-4 text-sky-500 inline-block mr-2' />
             Sending Message...
           </p>
@@ -73,7 +73,7 @@ export default function Example() {
       dispatch({ type: 'RESET', field: '', value: '' });
       toast({
         description: (
-          <p className='inline p-4 my-4'>
+          <p className='inline p-4 my-4 text-slate-600'>
             <CheckCircledIcon className='h-4 w-4 text-green-300 inline-block mr-2' />
             Message Sent!
           </p>
@@ -87,6 +87,9 @@ export default function Example() {
 
   return (
     <div className='relative isolate  px-6  lg:px-8'>
+      <h2 className='text-3xl font-bold text-slate-600 sm:text-4xl  mb-4 px-2'>
+          Get in touch
+        </h2>
       <div
         className='absolute inset-x-0 top-[-10rem] -z-40 transform-gpu  blur-3xl sm:top-[-20rem]'
         aria-hidden='true'
@@ -242,7 +245,7 @@ export default function Example() {
         <div className='mt-10'>
           <button
             type='submit'
-            className='block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
+            className='block w-full rounded-md shadow-md transition-all hover:border-2 hover:border-indigo-500 duration-200 bg-slate-50 hover:text-indigo-500 hover:shadow-xl px-3.5 py-2.5 text-center text-sm font-semibold text-slate-600   focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
           >
             {`Let's talk`}
           </button>

@@ -8,9 +8,9 @@ export const POST = async (request: Request) => {
   const res = await request.json();
   const { firstName, lastName, company, email, message, phoneNumber } = res;
   try {
-    const data = await resend.emails.send({
-      from: 'onboarding@resend.dev',
-      to: 'paulrvach@gmail.com',
+    const toSender = await resend.emails.send({
+      from: 'paul@paulvachon.dev',
+      to: email,
       subject: 'Thanks for getting in touch!',
       react: EmailTemplete({
         firstName,
@@ -21,8 +21,7 @@ export const POST = async (request: Request) => {
         phoneNumber,
       }),
     });
-
-    return NextResponse.json(data);
+    return NextResponse.json(toSender);
   } catch (error) {
     return NextResponse.json({ error });
   }

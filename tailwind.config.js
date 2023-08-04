@@ -40,7 +40,7 @@ module.exports = {
         pastelOrange: '#FFD8A8',
 
         backgroundColor: {
-          glass: 'rgba(255, 255, 255, 0.1)',
+          glass: 'rgba(255, 255, 255, 0.3)',
         },
         backdropFilter: {
           none: 'none',
@@ -86,10 +86,25 @@ module.exports = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: 0 },
         },
+        'gradient-animation': {
+          '25%': {
+            backgroundImage: 'linear-gradient(to right, #a855f7, #9333ea)',
+          },
+          '50%': {
+            backgroundImage: 'linear-gradient(to right, #7c3aed, #ec4899)',
+          },
+          '75%': {
+            backgroundImage: 'linear-gradient(to right, #9333ea, #a855f7)',
+          },
+          '100%': {
+            backgroundImage: 'linear-gradient(to right, #ec4899, #7c3aed)',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'gradient-animation': 'gradient-animation 15s ease infinite',
       },
     },
   },

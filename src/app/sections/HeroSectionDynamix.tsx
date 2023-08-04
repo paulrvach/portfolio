@@ -1,36 +1,19 @@
 'use client';
 import React, { useLayoutEffect, useRef } from 'react';
-import KineticType from '../components/KineticType';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import {
-  DM_Sans,
-  Eczar,
-  Roboto_Mono,
-  Rubik,
-  Space_Mono,
-  Luxurious_Roman,
-} from 'next/font/google';
-import { stagger } from 'framer-motion';
+import { DM_Sans } from 'next/font/google';
 
-export const mainText = DM_Sans({ subsets: ['latin'], weight: '400' });
-const spaceMono = Eczar({ subsets: ['latin'], weight: '600' });
-const roboto = Roboto_Mono({ subsets: ['latin'], weight: '600' });
-const rubik = Rubik({ subsets: ['latin'], weight: '600' });
-const inconsolata = Space_Mono({ subsets: ['latin'], weight: '700' });
-const luxuriousRoman = Luxurious_Roman({ subsets: ['latin'], weight: '400' });
+export const mainText = DM_Sans({ subsets: ['latin'], weight: ['400', '700'] });
 
-type Props = {
-  image: string;
-};
+type Props = {};
 
-const HeroSectionDynamix = ({ image }: Props) => {
+const HeroSectionDynamix = ({}: Props) => {
   const spansRef = useRef(null);
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
       // use scoped selectors
-      gsap.from('.anim', { y: 100, stagger: 0.2 });
+      gsap.from('.anim', { y: 100, stagger: 0.5 });
       // or refs
     }, spansRef);
 
@@ -39,53 +22,55 @@ const HeroSectionDynamix = ({ image }: Props) => {
 
   return (
     <>
+      <div className=' h-[75vh]  w-full p-8 gap-4 rounded-3xl flex flex-col justify-center items-center text-slate-700'>
       <div
-        className=' h-[85vh] w-full p-8 gap-4 rounded-3xl flex flex-col justify-center items-center -mt-10'
-        ref={spansRef}
+        className='absolute inset-x-0 top-[-10rem] -z-40 transform-gpu  blur-3xl sm:top-[-20rem]'
+        aria-hidden='true'
       >
-        <h1
-          className={`${mainText.className}   text-xl sm:text-2xl md:text-3xl overflow-hidden lg:text-4xl xl:text-5xl font-normal text-justify w-full sm:w-3/4 md:w-2/3 leading-normal sm:leading-[2rem] md:leading-[3rem] lg:leading-[4rem] mt-10 sm:mt-10 md:mt-20 lg:mt-32 cursor-pointer`}
-        >
-          <div className='overflow-hidden inline-block -mb-2'>
-            <div
-              className={`${rubik.className} anim text-pastelOrange hover:text-pastelYellow transition-colors duration-500`}
-            >
-              Welcome
-            </div>
-          </div>{' '}
-          to my portfolio. I&apos;m{' '}
-          <div className='overflow-hidden inline-block -mb-2'>
-            <div className={` anim ${luxuriousRoman.className} `}>Paul</div>
-          </div>
-          , and this is where I share my passion about{' '}
-          <div className='overflow-hidden inline-block -mb-2'>
-            <div
-              className={`anim ${roboto.className} text-pastelPink hover:text-pastelPurple transition-colors duration-500`}
-            >
-              programming
-            </div>
-          </div>{' '}
-          and{' '}
-          <div className='overflow-hidden inline-block -mb-2'>
-            <div
-              className={` anim ${spaceMono.className} text-pastelBlue hover:text-pastelGreen transition-colors duration-500`}
-            >
-              design
-            </div>
-          </div>
-          . I believe in a{' '}
-          <div className='overflow-hidden inline-block -mb-2'>
-            <div
-              className={` anim ${inconsolata.className} text-pastelGreen hover:text-pastelYellow transition-colors duration-500`}
-            >
-              practical
-            </div>
-          </div>{' '}
-          approach, so here I document my latest explorations.
-        </h1>
+        <div
+          className='relative left-1/2 -z-10 aspect-[1155/678] w-[36.125rem] max-w-none -translate-x-1/2 rotate-[90deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem]'
+          style={{
+            clipPath:
+              'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+          }}
+        />
       </div>
-      <div className='h-fit w-fit flex border-y-2'>
-        <KineticType text={'✹DESIGN        ⁕ENGINEER      ✺CREATE'} i={0} />
+      <div
+        className='absolute inset-x-0 top-[-10rem] -z-40 transform-gpu  blur-3xl sm:top-[-20rem]'
+        aria-hidden='true'
+      >
+        <div
+          className='relative right-1/2 -z-10 aspect-[1155/678] w-[36.125rem] max-w-none translate-x-1/2  bg-gradient-to-r from-indigo-200 via-red-200 to-yellow-100 opacity-30 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem]'
+          style={{
+            clipPath:
+              'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+          }}
+        />
+      </div>
+        <div
+          style={{ clipPath: 'inset(-100% 0 0% 0%)' }}
+          className='sm:w-3/4 md:w-2/3  sm:leading-[2rem] md:leading-[3rem]  lg:leading-[4rem] mt-10 sm:mt-10 md:mt-20 lg:mt-32 cursor-pointer'
+          ref={spansRef}
+        >
+          <h1
+            className={`${mainText.className} anim  text-xl sm:text-2xl md:text-3xl  lg:text-4xl xl:text-8xl font-bold text-center w-full `}
+          >
+            {"Hi, I'm "}{' '}
+            <span
+              className={`${mainText.className} saturate-200 group relative bg-clip-text text-transparent font-bold bg-gradient-to-r from-indigo-200 via-red-200 to-yellow-100`}
+            >
+              Paul
+            </span>
+          </h1>
+        </div>
+        <h3
+          className={`${mainText.className}  anim  sm:text-md md:text-lg overflow-hidden lg:text-xl xl:text-2xl flex flex-row items-center justify-center leading-normal `}
+        >
+          📍 Los Angeles, CA 
+        </h3>
+        <p className={`${mainText.className} anim text-center max-w-md text-lg `}>
+          👨🏽‍💻 Full Stack Software engineer with a passion for ⚙️ Engineering and 🎨 Design 
+        </p>
       </div>
     </>
   );

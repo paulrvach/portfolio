@@ -15,13 +15,16 @@ export default function Spotlight({
   const containerSize = useRef<{ w: number; h: number }>({ w: 0, h: 0 });
   const [boxes, setBoxes] = useState<Array<HTMLElement>>([]);
 
+  // if the containerRef.current is true setBoxes to an array of all the html elements
   useEffect(() => {
-    containerRef.current &&
+    if (containerRef.current) {
       setBoxes(
         Array.from(containerRef.current.children).map((el) => el as HTMLElement)
       );
+    }
   }, []);
 
+  // reintilizes container when the screen is resized
   useEffect(() => {
     initContainer();
     window.addEventListener('resize', initContainer);
@@ -61,7 +64,7 @@ export default function Spotlight({
       containerSize.current.h = containerRef.current.offsetHeight;
     }
   };
-
+  initContainer();
   return (
     <div className={className} ref={containerRef}>
       {children}

@@ -26,14 +26,14 @@ const NavBar = (props: Props) => {
         href='/'
       >
         <Logo size='28' />
-        <p className='pb-1 whitespace-nowrap hover:text-white text-slate-400'>
+        <p className='pb-1 whitespace-nowrap hover:text-slate-600 text-slate-400'>
           paul vachon
         </p>
       </Link>
-      <NavigationMenu className='gap-2 bg-transparent'>
+      <NavigationMenu className='gap-2 '>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuTrigger className=''>
+            <NavigationMenuTrigger className='text-slate-800 bg-transparent'>
               Resources
             </NavigationMenuTrigger>
             <NavigationMenuContent>
@@ -63,27 +63,24 @@ const NavBar = (props: Props) => {
                     >
                       Projects
                     </Link>
+                    <Link
+                      className='cursor-pointer hover:text-white items-start align-top'
+                      href='/#contact'
+                    >
+                      Contact
+                    </Link>
                   </div>
-                  {/* <a
-                    className='cursor-pointer hover:text-white'
-                    href='#contact'
-                  >
-                    Contact
-                  </a>
-
-                  <a className='cursor-pointer hover:text-white' href='#media'>
-                    Media
-                  </a> */}
+                  
                 </li>
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
         </NavigationMenuList>
         <a href='https://github.com/paulrvach' target='_blank'>
-          <GitHubLogoIcon className='h-5 w-5 cursor-pointer hover:text-white text-slate-400' />
+          <GitHubLogoIcon className='h-5 w-5 cursor-pointer hover:text-slate-600 text-slate-400' />
         </a>
         <a href='https://www.linkedin.com/in/paul-vachon' target='_blank'>
-          <LinkedInLogoIcon className='h-5 w-5 cursor-pointer hover:text-white text-slate-400' />
+          <LinkedInLogoIcon className='h-5 w-5 cursor-pointer hover:text-slate-600 text-slate-400' />
         </a>
       </NavigationMenu>
     </nav>

@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${vibes.className}  `}>
-        <ThemeProvider attribute='class' defaultTheme='dark' enableSystem>
+        <ThemeProvider attribute='class' defaultTheme='light' >
         <NavBar />
           {children}
         </ThemeProvider>

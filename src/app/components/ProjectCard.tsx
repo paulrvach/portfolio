@@ -23,9 +23,10 @@ import Link from 'next/link';
 
 type CardProps = {
   project: (typeof projects)[0];
+  layerRef: React.RefObject<HTMLLIElement>
 };
 
-const ProjectCard = ({ project }: CardProps) => {
+const ProjectCard = ({ project, layerRef }: CardProps) => {
   const [demo, setDemo] = useState(false);
 
   const onHoverHander = () => {
@@ -36,16 +37,15 @@ const ProjectCard = ({ project }: CardProps) => {
     setDemo(false);
   };
 
-  const onClickHandler = () => {};
 
   return (
-    <li className='w-full md:w-1/2 lg:w-1/4 mb-4 px-2 '>
+    <li className='w-full md:w-1/2 lg:w-1/4 mb-4 px-2 project-card' ref={layerRef}>
       <a
         href={`/${project.active}`}
         onMouseOver={onHoverHander}
         onMouseLeave={onLeaveHandler}
       >
-        <Card className='border-0 '>
+        <Card className='border-0 shadow-none'>
           <CardHeader className='p-2 '>
             <div className='relative'>
               <img
