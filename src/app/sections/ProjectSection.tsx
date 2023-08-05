@@ -29,7 +29,6 @@ const ProjectSection = ({}: SectionProps) => {
       ease: 'power4',
       scrollTrigger: {
         trigger: '.about',
-        markers: true,
         start: 'top top',
         end: '+=600',
         scrub: true,

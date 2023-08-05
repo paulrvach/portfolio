@@ -66,7 +66,7 @@ const Flowers = ({ size, offset, blur }: FlowersProps) => {
       flowerRefs.current.push(flowerRef);
 
       const newEle = (
-        <Flower
+        <Square
           layerRef={flowerRef}
           key={i}
           topPos={`${position.top}px`}

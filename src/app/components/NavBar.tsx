@@ -12,8 +12,6 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
-import { Separator } from '@/components/ui/separator';
-
 import { GitHubLogoIcon, LinkedInLogoIcon } from '@radix-ui/react-icons';
 
 type Props = {};
@@ -30,16 +28,16 @@ const NavBar = (props: Props) => {
           paul vachon
         </p>
       </Link>
-      <NavigationMenu className='gap-2 '>
-        <NavigationMenuList>
-          <NavigationMenuItem>
+      <NavigationMenu className='gap-2   z-50'>
+        <NavigationMenuList className=''>
+          <NavigationMenuItem className=''>
             <NavigationMenuTrigger className='text-slate-800 bg-transparent'>
               Resources
             </NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className='grid gap-3  p-4 md:w-[400px] lg:w-[400px] lg:grid-cols-[.75fr_1fr] '>
-                <li>
-                  <h5 className='font-semibold text-lg mb-2  border-b-2'>
+            <NavigationMenuContent className=' bg-trasnparent'>
+              <ul className='grid gap-3  p-4 md:w-[400px] lg:w-[400px] lg:grid-cols-[.75fr_1fr] text-slate-600 '>
+                <li >
+                  <h5 className='font-semibold text-lg mb-2  border-b-2 '>
                     Resume
                   </h5>
                   <NavigationMenuLink href='https://drive.google.com/file/d/1WiDGT2MnAJOunqNgt45fHqwsnnSz6HcG/view?usp=drive_link'>
@@ -57,18 +55,20 @@ const NavBar = (props: Props) => {
                   <h5 className='font-semibold text-lg   border-b-2'>
                     Sections
                   </h5>
+                  <div className='flex flex-col gap-2'>
                     <Link
-                      className='cursor-pointer hover:text-white items-start align-top'
+                      className='cursor-pointer hover:text-slate-900 items-start align-top'
                       href='/#projects'
                     >
                       Projects
                     </Link>
                     <Link
-                      className='cursor-pointer hover:text-white items-start align-top'
+                      className='cursor-pointer hover:text-slate-900 items-start align-top'
                       href='/#contact'
                     >
                       Contact
                     </Link>
+                    </div>
                   </div>
                   
                 </li>
