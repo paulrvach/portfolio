@@ -62,7 +62,7 @@ export default function Example() {
           </p>
         ),
       });
-      const sendEmail = fetch('http://localhost:3000/api/contact-form', {
+      const sendEmail = fetch('/api/contact-form', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(state),
