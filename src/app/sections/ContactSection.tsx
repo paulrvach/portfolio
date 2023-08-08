@@ -2,6 +2,7 @@ import React, { useLayoutEffect, useRef } from 'react';
 import ContactForm from '../components/ContactForm';
 import Logo from '../components/Logo';
 import Link from 'next/link';
+
 import {
   EnvelopeClosedIcon,
   GitHubLogoIcon,

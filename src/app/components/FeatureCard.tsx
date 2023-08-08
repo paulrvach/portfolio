@@ -21,10 +21,9 @@ type Feature = {
 
 interface FeatureCardProps {
   feature: Feature;
-  index: number;
 }
 
-const FeatureCard: React.FC<FeatureCardProps> = ({ feature, index }) => {
+const FeatureCard: React.FC<FeatureCardProps> = ({ feature }) => {
   const featureRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
     if (featureRef.current) {
@@ -49,7 +48,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ feature, index }) => {
 
   return (
     
-      <Card ref={featureRef} className='border-0 carousel-item  w-full md:w-1/2 lg:w-1/3 mb-4 px-2'>
+      <Card ref={featureRef} className='border-0 shadow-none'>
         <CardHeader className='p-2 '>
           <div className=' lg:h-64 overflow-hidden rounded-md  transition duration-100 hover:-translate-y-2'>
             <img

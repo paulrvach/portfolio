@@ -1,16 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react';
-import { Lato } from 'next/font/google';
+import { Lato, Quicksand } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
 
 const lato = Lato({ subsets: ['latin'], weight: '700' });
+const quicksand = Quicksand({ subsets: ['latin'], weight: '700' });
 
 type Props = {};
 
 const KafkaNimbus = (props: Props) => {
   return (
-    <div className='w-full h-full overflow-scroll z-30 '>
+    <div className={` w-full h-full overflow-scroll z-30`} >
       <div className='my-4 '>
         <article>
             <video
@@ -23,12 +24,12 @@ const KafkaNimbus = (props: Props) => {
             >
               <source src='https://res.cloudinary.com/dpqdqryvo/video/upload/v1685814776/test-demo-kafka_szbixp.mov' />
             </video>
-          <div className=''>
+          <div className='text-justify'>
             <div className='mb-4'>
              
             </div>
-            <h2 className='text-4xl font-bold mb-4'>What it does</h2>
-            <p>
+            <p className='rounded-lg shadow-lg bg-neutral-100 px-4 py-6 border-2 '>
+            <h3 className='text-justify text-xl font-bold mb-2'>What it does:</h3>
               Operating Kafka involves more than just infrastructure costs. It
               also requires skilled engineers to handle cluster configuration,
               management, and scaling. Furthermore, the development of custom
@@ -43,14 +44,14 @@ const KafkaNimbus = (props: Props) => {
               We currently support deployments to AWS and are working on adding
               support for Digital Ocean and Google Cloud.
             </p>
-            <h2 className='text-4xl font-bold mt-8 mb-2'>My Contributions</h2>
+            <h2 className='text-justify text-4xl font-bold mt-24 mb-4'>My Contributions</h2>
             <p>
               Working as a full-stack engineer, my contributions ranged from
               orchestrating the user flow and data visualization in React and
               the Next.js App Router framework to containerizing and deploying
               our application alongside our data visualization package.
             </p>
-            <h3 className='text-2xl font-bold mt-6'>
+            <h3 className='text-xl pb-2 font-bold mt-6'>
               Designing the user flow in Figma
             </h3>
             <div className='bg-slate-50 p-4 my-4 rounded-md bg-opacity-25'>
@@ -89,7 +90,7 @@ const KafkaNimbus = (props: Props) => {
               provided clear specifications for the development team, resulting
               in a successful deployment of Kafka Nimbus.
             </p>
-            <h3 className='text-2xl font-bold mt-6'>
+            <h3 className='text-xl pb-2 font-bold mt-6'>
               Developing in the Next.js App Router Framework
             </h3>
             <img
@@ -113,7 +114,7 @@ const KafkaNimbus = (props: Props) => {
               ensured seamless data transfer between our front-end and back-end
               teams, enabling them to work in perfect synchronization.
             </p>
-            <h3 className='text-2xl font-bold mt-6'>
+            <h3 className='text-xl pb-2 font-bold mt-6'>
               Visualization with Prometheus and Grafana
             </h3>
             <p>
@@ -134,7 +135,7 @@ const KafkaNimbus = (props: Props) => {
               metrics in visually appealing graphs on the user dashboard using
               Grafana.
             </p>
-            <h3 className='text-2xl font-bold mt-6'>
+            <h3 className='text-xl pb-2 font-bold mt-6'>
               Deploying the multi-container application
             </h3>
             <img alt='Application Signal Flow'
@@ -188,7 +189,7 @@ const KafkaNimbus = (props: Props) => {
                 demands.
               </li>
             </ol>
-            <h2 className='text-4xl font-bold mt-8'>
+            <h2 className='text-justify text-4xl font-bold mt-8'>
               Managing SCRUM environment
             </h2>
             <div className='carousel w-full rounded-lg my-4'>
@@ -256,7 +257,7 @@ const KafkaNimbus = (props: Props) => {
               the development team. This template served as a foundation for
               managing tasks, documentation, resources, and meetings.
             </p>
-            <h3 className='text-2xl font-bold mt-6'>
+            <h3 className='text-xl pb-2 font-bold mt-6'>
               Kanban Boards for Development Tickets
             </h3>
             <p>
@@ -268,7 +269,7 @@ const KafkaNimbus = (props: Props) => {
               real-time visibility into ongoing development efforts and
               fostering effective communication among team members.
             </p>
-            <h3 className='text-2xl font-bold mt-6'>
+            <h3 className='text-xl pb-2 font-bold mt-6'>
               Documenting Work Progress and Resources
             </h3>
             <p>
@@ -281,7 +282,7 @@ const KafkaNimbus = (props: Props) => {
               documentation aspect ensured that knowledge was accessible to the
               entire team, promoting transparency and collaboration.
             </p>
-            <h3 className='text-2xl font-bold mt-6'>
+            <h3 className='text-xl pb-2 font-bold mt-6'>
               Scheduling Meetings and Keeping Meeting Notes
             </h3>
             <p>

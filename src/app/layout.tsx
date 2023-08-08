@@ -3,7 +3,7 @@ import NavBar from './components/NavBar';
 import { Lato } from 'next/font/google';
 import { ThemeProvider } from './components/ThemeProvider';
 import Script from 'next/script';
-const vibes = Lato({ subsets: ['latin'], weight: '400' });
+const vibes = Lato({ subsets: ['latin'], weight: ['400', '700', '900'] });
 
 export const metadata = {
   title: 'Paul Vachon',
