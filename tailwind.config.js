@@ -113,5 +113,6 @@ module.exports = {
     require('tailwindcss-animate'),
     require('tailwindcss-filters'),
     require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
   ],
 };

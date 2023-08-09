@@ -5,6 +5,7 @@ import FeaturesShowcase from '../components/FeatureShowcase';
 import PlaneComponent from './PlaneComponent';
 import { projectOneFeatures, projects } from '@/utils/projects';
 import ProjectHeroSection from '../components/ProjectHeroSection';
+import ProjectOneBlog from './ProjectOneBlog';
 
 type Props = {};
 
@@ -20,7 +21,7 @@ const ProjectOnePage = (props: Props) => {
   });
   return (
     <div className='overflow-x-hidden relative bg-slate-50 '>
-      <div className='lg:mx-28 md:mx-24 xl:mx-64 px-6 flex flex-col text-slate-600'>
+      <div className='lg:mx-28 md:mx-24 xl:mx-64 px-6 flex flex-col items-center text-slate-600'>
         <ProjectHeroSection
           title='Location based residential real-estate investment finder'
           image='https://res.cloudinary.com/dxmqknhgj/image/upload/v1689627776/Asset_aqe1sx.png'
@@ -35,13 +36,15 @@ const ProjectOnePage = (props: Props) => {
             'Routing',
           ]}
           role='Full Stack Software Engineer'
-          team={['Paul Vachon, Software Engineer', 'Caleb Hanson, Licensed Real-Estate Broker']}
+          team={[
+            'Paul Vachon, Software Engineer',
+            'Caleb Hanson, Licensed Real-Estate Broker',
+          ]}
           repo='https://github.com/paulrvach/Residential-Investment-Finder'
           website='https://kafka-nimbus.vercel.app/'
-          
         />
         <FeaturesShowcase features={projectOneFeatures} />
-        <div className='bg-slate-200 h-screen'></div>
+        <ProjectOneBlog />
       </div>
     </div>
   );

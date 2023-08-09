@@ -1,10 +1,11 @@
 'use client';
 import React, { useRef, useEffect, useState, createRef } from 'react';
 import Flower from './flower';
+import EmojiOne from './emojiOne';
 import Square from './square';
 import { randomizePosition } from '../../utils/tailwindFunctions';
-import Spotlight from '@/app/components/Spotlight';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
 
 function offsetToCenter(e: MouseEvent): { offsetX: number; offsetY: number } {
   const centerX = window.innerWidth / 2;
@@ -19,7 +20,7 @@ function offsetToCenter(e: MouseEvent): { offsetX: number; offsetY: number } {
 type FlowersProps = {
   size: string;
   offset: number;
-  blur?: 'blur-md' | 'blur-lg' | 'blur-sm'
+  blur?: 'blur-md' | 'blur-lg' | 'blur-sm';
 };
 
 const Flowers = ({ size, offset, blur }: FlowersProps) => {
@@ -28,11 +29,23 @@ const Flowers = ({ size, offset, blur }: FlowersProps) => {
   const [svgs, setSvgs] = useState<React.JSX.Element[]>([]);
 
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
     if (containerRef.current) {
       const FollowBox = containerRef.current;
 
       gsap.set(FollowBox, {
         scale: 1,
+      });
+
+      gsap.to(FollowBox, {
+        scale: 1.4,
+        scrollTrigger: {
+          trigger: 'top',
+          start: 'top top',
+          end: '+=600',
+          scrub: true,
+          pin: true,
+        },
       });
 
       const handleMouseMove = (e: MouseEvent) => {
@@ -60,7 +73,7 @@ const Flowers = ({ size, offset, blur }: FlowersProps) => {
 
   useEffect(() => {
     const output: React.JSX.Element[] = [];
-    for (let i = 0; i < 25; i++) {
+    for (let i = 0; i < 10; i++) {
       const position = randomizePosition();
       const flowerRef = React.createRef<HTMLDivElement>();
       flowerRefs.current.push(flowerRef);

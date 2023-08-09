@@ -3,8 +3,7 @@ import React, { useEffect } from 'react';
 import FeaturesShowcase from '../components/FeatureShowcase';
 import { projectTwoFeatures, projects } from '@/utils/projects';
 import ProjectHeroSection from '../components/ProjectHeroSection';
-import KafkaNimbus from '../sections/KafkaNimbus';
-
+import ProjectTwoBlog from './ProjectTwoBlog';
 type Props = {};
 
 const Project2 = (props: Props) => {
@@ -24,7 +23,7 @@ const Project2 = (props: Props) => {
 
   return (
     <div className='overflow-x-hidden relative bg-slate-50 text-slate-700'>
-      <div className='lg:mx-28 md:mx-24 xl:mx-64 px-6 flex flex-col'>
+      <div className='xl:mx-28 md:mx-24 2xl:mx-64 px-6 flex flex-col items-center'>
         <ProjectHeroSection
           title='Kafka Nimbus'
           date='March 2023 - Current'
@@ -39,7 +38,7 @@ const Project2 = (props: Props) => {
         />
         <FeaturesShowcase features={projectTwoFeatures} />
         <div className='xl:px-48'>
-        <KafkaNimbus />
+        <ProjectTwoBlog />
         </div>
       </div>
     </div>
