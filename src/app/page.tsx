@@ -1,6 +1,7 @@
 "use client";
 import React, { Suspense, useEffect, useState } from "react";
-import { ProjectCard } from "./ui";
+import { Flex } from "@radix-ui/themes";
+import { ProjectSection, ResourceSection } from "./components";
 
 export default function Home() {
   useEffect(() => {
@@ -11,25 +12,11 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="overflow-x-hidden flex flex-col justify-center items-center bg-slate-200 max-w-[65ch]">
-      <ProjectCard
-        contribution="Software Engineer"
-        description="Animated Component Library"
-        title="paperplane-ui"
-        href=""
-      />
-      <ProjectCard
-        contribution="Software Engineer"
-        description="Animated Component Library"
-        title="paperplane-ui"
-        href=""
-      />
-      <ProjectCard
-        contribution="Software Engineer"
-        description="Animated Component Library"
-        title="paperplane-ui"
-        href=""
-      />
+    <div className="h-screen w-screen flex flex-col  items-center">
+      <div className="w-[65%] h-screen flex justify-around mt-16">
+        <ProjectSection  />
+        <ResourceSection />
+      </div>
     </div>
   );
 }

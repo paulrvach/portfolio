@@ -1,26 +1,26 @@
-const projects = [
-     {
-        contribution: 'Design Engineer',
-        title: 'paperplane-ui',
-        descriiption: '',
-        href: ''
+export const projects = [
+    {
+        "contribution": "Design Engineer",
+        "title": "Paperplane UI",
+        "description": "An Animated Component Library",
+        "href": "/paperplane-ui"
     },
-     {
-        contribution: '',
-        title: 'Kafka Nimbus',
-        descriiption: '',
-        href: ''
+    {
+        "contribution": "Software Engineer",
+        "title": "Kafka Nimbus",
+        "description": "A Remote Kafka Deployment App",
+        "href": "/kafka-nimbus"
     },
-     {
-        contribution: '',
-        title: 'Residential Real-Estate Investment Analysis',
-        descriiption: '',
-        href: ''
+    {
+        "contribution": "Software Engineer",
+        "title": "Residential Real-Estate Investment Analysis",
+        "description": "Location-based residential real-estate investment App.",
+        "href": "/real-estate-app"
     },
-     {
-        contribution: '',
-        title: 'AI Voice Conversation App',
-        descriiption: '',
-        href: ''
-    },
+    {
+        "contribution": "Software Engineer",
+        "title": "AI Voice Conversation App",
+        "description": "Speech-based AI conversational app.",
+        "href": "jarvis"
+    }
 ]

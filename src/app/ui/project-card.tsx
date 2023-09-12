@@ -24,11 +24,15 @@ const ProjectCard = ({
   ...props
 }: ProjectCardProps): JSX.Element => {
   return (
-    <RadixCard {...props} variant="ghost">
+    <RadixCard
+      {...props}
+      variant="ghost"
+      className="hover:bg-primary-foreground w-full select-none"
+    >
       <Flex direction={"column"} gap={"2"}>
         <Box>
-          <Text>{contribution}</Text>
-          <Heading weight="bold" as="h3" size={"5"}>
+          <Text size="2">{contribution}</Text>
+          <Heading weight="bold" as="h3" size={"3"}>
             {title}
           </Heading>
         </Box>
@@ -41,9 +45,9 @@ const ProjectCard = ({
             size="2"
             weight="bold"
             underline="auto"
-            className="select-none"
+            className="group"
           >
-            Read More <ArrowTopRightIcon className="inline w-3 h-3" />
+            Read More <ArrowTopRightIcon className="inline-block w-4 h-4 group-hover:translate-x-[2px] group-hover:-translate-y-[2px]" />
           </Link>
         </Box>
       </Flex>
@@ -52,3 +56,4 @@ const ProjectCard = ({
 };
 
 export { ProjectCard };
+export type { ProjectCardProps };
