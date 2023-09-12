@@ -1,13 +1,12 @@
-import './globals.css';
-import NavBar from './components/NavBar';
-import { Lato } from 'next/font/google';
-import { ThemeProvider } from './components/ThemeProvider';
-import Script from 'next/script';
-const vibes = Lato({ subsets: ['latin'], weight: ['400', '700', '900'] });
+import "./globals.css";
+import "@radix-ui/themes/styles.css";
+import { Lato } from "next/font/google";
+import { Theme } from "@radix-ui/themes";
+const vibes = Lato({ subsets: ["latin"], weight: ["400", "700", "900"] });
 
 export const metadata = {
-  title: 'Paul Vachon',
-  description: 'Portfolio',
+  title: "Paul Vachon",
+  description: "Portfolio",
 };
 
 export default function RootLayout({
@@ -15,14 +14,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  
   return (
-    <html lang='en'>
+    <html lang="en">
       <body className={`${vibes.className}  `}>
-        <ThemeProvider attribute='class' defaultTheme='light' >
-        <NavBar />
-          {children}
-        </ThemeProvider>
+        <Theme appearance="light">{children}</Theme>
       </body>
     </html>
   );

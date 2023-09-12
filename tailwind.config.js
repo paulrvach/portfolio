@@ -109,10 +109,6 @@ module.exports = {
     },
   },
   plugins: [
-    require('daisyui'),
-    require('tailwindcss-animate'),
-    require('tailwindcss-filters'),
-    require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
   ],
 };
