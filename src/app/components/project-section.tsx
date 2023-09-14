@@ -1,6 +1,6 @@
 "use client";
 import { projects } from "../utils/data";
-import { ProjectCard } from "ui";
+import { ProjectCard } from "@/src/app/ui";
 import { Flex } from "@radix-ui/themes";
 import { sfPro } from "../layout";
 

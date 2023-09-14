@@ -12,8 +12,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col  justify-center items-center mx-8 md:mx-32 2xl:mx-80 ">
-
+    <div className="">
       <HeroSection />
       <div className=" flex flex-col gap-16 xl:flex-row mt-16 ">
         <ProjectSection />

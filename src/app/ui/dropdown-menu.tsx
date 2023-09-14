@@ -1,24 +1,25 @@
 "use client";
-import {useState} from 'react'
-import { DropdownMenu, Button } from "@radix-ui/themes";
-import { MenuAnimation } from "ui";
+import { MenuAnimation } from "./ping-lottie";
+import { useDrawerContext } from "../context/drawerCtx";
 
 type Props = {};
 
-const DropDown = (props: Props) => {
+const DropDown = () => {
+  const { openDrawer, setOpenDrawer } = useDrawerContext();
+  const handleClick = () => {
+    if (openDrawer) {
+      setOpenDrawer(!openDrawer);
+    } else {
+      setOpenDrawer(!openDrawer);
+    }
+  };
 
   
 
   return (
-    <DropdownMenu.Root>
-      <DropdownMenu.Trigger>
-          <MenuAnimation/>
-      </DropdownMenu.Trigger>
-      <DropdownMenu.Content>
-        <DropdownMenu.Item shortcut="⌘ E">Resume</DropdownMenu.Item>
-        <DropdownMenu.Item shortcut="⌘ D">Duplicate</DropdownMenu.Item>
-      </DropdownMenu.Content>
-    </DropdownMenu.Root>
+    <div onClick={handleClick} className="z-20">
+      <MenuAnimation isOpen={openDrawer} />
+    </div>
   );
 };
 

@@ -5,9 +5,10 @@ import {
   Text,
   Box,
   Heading,
-  Link,
+  Link as RadixLink,
 } from "@radix-ui/themes";
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
+import Link from "next/link";
 
 interface ProjectCardProps extends ComponentProps<typeof RadixCard> {
   contribution: string;
@@ -24,6 +25,7 @@ const ProjectCard = ({
   ...props
 }: ProjectCardProps): JSX.Element => {
   return (
+    <Link href={href}>
     <RadixCard
       {...props}
       variant="ghost"
@@ -40,7 +42,7 @@ const ProjectCard = ({
           <Text as="div" size="2" color="gray">
             {description}
           </Text>
-          <Link
+          <RadixLink
             href={href}
             size="2"
             weight="bold"
@@ -48,10 +50,11 @@ const ProjectCard = ({
             className="group"
           >
             Read More <ArrowTopRightIcon className="inline-block w-4 h-4 group-hover:translate-x-[2px] group-hover:-translate-y-[2px]" />
-          </Link>
+          </RadixLink>
         </Box>
       </Flex>
     </RadixCard>
+    </Link>
   );
 };
 

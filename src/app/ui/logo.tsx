@@ -22,7 +22,7 @@ const Logo = ({height = "100" , width ="100", ...props}: LogoProps) => {
             r="19"
             transform="rotate(-90 49.9033 32.7102)"
             stroke="hsl(43.15,100%,65.1%)"
-            stroke-width="3"
+            strokeWidth="3"
           />
           <circle
             cx="49.9033"
@@ -30,7 +30,7 @@ const Logo = ({height = "100" , width ="100", ...props}: LogoProps) => {
             r="19"
             transform="rotate(-90 49.9033 70.7102)"
             stroke="hsl(43.15,100%,65.1%)"
-            stroke-width="3"
+            strokeWidth="3"
           />
           <circle
             cx="30.9033"
@@ -38,7 +38,7 @@ const Logo = ({height = "100" , width ="100", ...props}: LogoProps) => {
             r="19"
             transform="rotate(-90 30.9033 51.7102)"
             stroke="hsl(43.15,100%,65.1%)"
-            stroke-width="3"
+            strokeWidth="3"
           />
           <circle
             cx="69.483"
@@ -46,7 +46,7 @@ const Logo = ({height = "100" , width ="100", ...props}: LogoProps) => {
             r="19"
             transform="rotate(-90 69.483 51.7102)"
             stroke="hsl(43.15,100%,65.1%)"
-            stroke-width="3"
+            strokeWidth="3"
           />
         </g>
         <defs>
@@ -57,9 +57,9 @@ const Logo = ({height = "100" , width ="100", ...props}: LogoProps) => {
             width="100"
             height="100"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feBlend
               mode="normal"
               in="SourceGraphic"

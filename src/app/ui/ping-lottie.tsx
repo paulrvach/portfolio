@@ -3,19 +3,23 @@ import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
 import Lottie, { useLottie } from "lottie-react";
 import pingAnimation from "./animation_lmhbkf67.json";
 import menuAnimation from "./animation_lmicqbk8.json";
+import { Tooltip } from "@radix-ui/themes";
 
 type Props = {
-  setIsOpen: Dispatch<SetStateAction<boolean>>;
   isOpen: boolean;
 };
 
-const PingingAnimation = (props: Props) => {
-  return <Lottie animationData={pingAnimation} loop={true} />;
+const PingingAnimation = () => {
+  return (
+    <Lottie
+      animationData={pingAnimation}
+      loop={true}
+      className="cursor-pointer"
+    />
+  );
 };
 
-function MenuAnimation() {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-
+function MenuAnimation({ isOpen }: Props) {
   const options = {
     animationData: menuAnimation,
     loop: false,
@@ -23,27 +27,22 @@ function MenuAnimation() {
   };
 
   const style = {
-    height: "56px",
-    width: "56px",
+    height: "64px",
+    width: "64px",
     scale: "800%",
-    stroke: "hsl(43.15,100%,65.1%)",
-    strokeWidth: "5px",
   };
 
   const { View, playSegments } = useLottie(options, style);
 
-  const handleClick = () => {
+  useEffect(() => {
     if (isOpen) {
       playSegments([60, 100], true);
-      setIsOpen(!isOpen);
     } else {
       playSegments([10, 50], true);
-      setIsOpen(!isOpen);
     }
-  };
+  }, [isOpen, playSegments]);
 
-
-  return <div onClick={handleClick}>{View}</div>;
+  return <>{View}</>;
 }
 
 export { PingingAnimation, MenuAnimation };

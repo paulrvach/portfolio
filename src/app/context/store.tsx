@@ -10,29 +10,38 @@ import {
 import { Theme, type ThemeOptions } from "@radix-ui/themes";
 
 interface ContextProps {
-  theme: ThemeOptions['appearance'] 
-  setTheme: Dispatch<SetStateAction<ThemeOptions['appearance']>>;
+  theme: ThemeOptions["appearance"];
+  setTheme: Dispatch<SetStateAction<ThemeOptions["appearance"]>>;
+
 }
 
-const GlobalContext = createContext<ContextProps>({
+const ThemeContext = createContext<ContextProps>({
   theme: "dark",
   setTheme: (): string => "dark",
+
 });
 
-const GlobalContextProvider = ({
+const ThemeContextProvider = ({
   children,
 }: HTMLAttributes<HTMLDivElement>) => {
-  const [theme, setTheme] = useState<ThemeOptions['appearance']>("dark");
+  const [theme, setTheme] = useState<ThemeOptions["appearance"]>("dark");
 
   return (
-    <GlobalContext.Provider value={{ theme, setTheme }}>
-      <Theme appearance={theme} accentColor="amber" radius="full" className="">
+    <ThemeContext.Provider
+      value={{ theme, setTheme }}
+    >
+      <Theme
+        appearance={theme}
+        accentColor="amber"
+        radius="full"
+        className="mx-8 md:mx-32 2xl:mx-80"
+      >
         {children}
       </Theme>
-    </GlobalContext.Provider>
+    </ThemeContext.Provider>
   );
 };
 
-const useGlobalContext = () => useContext(GlobalContext);
+const useThemeContext = () => useContext(ThemeContext);
 
-export { GlobalContextProvider, useGlobalContext };
+export { ThemeContextProvider, useThemeContext };

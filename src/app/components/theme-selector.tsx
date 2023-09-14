@@ -1,5 +1,5 @@
 "use client";
-import { useGlobalContext } from "../context/store";
+import { useThemeContext } from "../context/store";
 import {
   MoonIcon,
   SunIcon,
@@ -10,7 +10,7 @@ import { DropdownMenu, Text, Container, Box } from "@radix-ui/themes";
 type Props = {};
 
 const ThemeSelector = (props: Props) => {
-  const { theme, setTheme } = useGlobalContext();
+  const { theme, setTheme } = useThemeContext();
 
   const themeButton: { dark: JSX.Element; light: JSX.Element } = {
     dark: (

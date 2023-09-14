@@ -1,7 +1,8 @@
 import { HTMLAttributes } from "react";
 import { GithubCard } from "./github-card";
-import { SocialCard, PingingAnimation } from "ui";
-import { LinkedInLogoIcon, DotFilledIcon } from "@radix-ui/react-icons";
+import { SocialCard, PingingAnimation } from "@/src/app/ui";
+import { LinkedInLogoIcon } from "@radix-ui/react-icons";
+import { Tooltip } from "@radix-ui/themes";
 import Image from "next/image";
 
 const ResourceSection = ({
@@ -42,23 +43,21 @@ const ResourceSection = ({
         }
         title="paperplane-ui"
       />
-      <SocialCard
-        btnText=""
-        href=""
-        rowSpan={"2"}
-        title=""
-        style={{
-          backgroundImage:
-            "url(https://res.cloudinary.com/dxmqknhgj/image/upload/v1694584803/Screenshot_2023-09-12_225950_cvmkck.png)",
-          backgroundSize: "350%",
-          backgroundPositionX: "-250px",
-          backgroundPositionY: "-12pnpm 0px",
-        }}
-      >
-        <div className="absolute">
+        <SocialCard
+          btnText=""
+          href=""
+          rowSpan={"2"}
+          title=""
+          style={{
+            backgroundImage:
+              "url(https://res.cloudinary.com/dxmqknhgj/image/upload/v1694584803/Screenshot_2023-09-12_225950_cvmkck.png)",
+            backgroundSize: "350%",
+            backgroundPositionX: "-250px",
+            backgroundPositionY: "-12pnpm 0px",
+          }}
+        >
           <PingingAnimation />
-        </div>
-      </SocialCard>
+        </SocialCard>
       <GithubCard />
       <SocialCard
         btnText="connect"

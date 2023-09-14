@@ -2,8 +2,10 @@ import "./globals.css";
 import "@radix-ui/themes/styles.css";
 import { Lato } from "next/font/google";
 import localFont from "next/font/local";
-import { GlobalContextProvider } from "./context/store";
+import { ThemeContextProvider } from "./context/store";
+import { DrawerContextProvider } from "./context/drawerCtx";
 import { NavBar } from "./components";
+import { Drawer } from "./ui";
 const vibes = Lato({ subsets: ["latin"], weight: ["400", "700", "900"] });
 export const sfPro = localFont({
   src: [
@@ -28,12 +30,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${sfPro.className}`}>
-        <GlobalContextProvider>
+      <body className={`${sfPro.className} relative `}>
+        <DrawerContextProvider>
           <NavBar />
-
-          {children}
-        </GlobalContextProvider>
+          <Drawer />
+          <ThemeContextProvider>{children}</ThemeContextProvider>
+        </DrawerContextProvider>
       </body>
     </html>
   );
