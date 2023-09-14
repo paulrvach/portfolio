@@ -1,7 +1,7 @@
 "use client";
 import React, { Suspense, useEffect, useState } from "react";
-import { Flex } from "@radix-ui/themes";
-import { ProjectSection, ResourceSection } from "./components";
+import { ThemeSelector } from "./components/theme-selector";
+import { ProjectSection, ResourceSection, HeroSection } from "./components";
 
 export default function Home() {
   useEffect(() => {
@@ -12,11 +12,14 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="h-screen w-screen flex flex-col  items-center">
-      <div className="w-[65%] h-screen flex justify-around mt-16">
-        <ProjectSection  />
+    <div className="flex flex-col  justify-center items-center mx-8 md:mx-32 2xl:mx-80 ">
+
+      <HeroSection />
+      <div className=" flex flex-col gap-16 xl:flex-row mt-16 ">
+        <ProjectSection />
         <ResourceSection />
       </div>
+      <ThemeSelector />
     </div>
   );
 }

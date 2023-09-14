@@ -2,10 +2,11 @@
 import { projects } from "../utils/data";
 import { ProjectCard } from "ui";
 import { Flex } from "@radix-ui/themes";
+import { sfPro } from "../layout";
 
 const ProjectSection = () => {
   return (
-    <Flex direction={"column"} gap={"6"} className="w-1/2">
+    <Flex direction={"column"} gap={"6"} className={`w-full xl:w-1/2 `}>
       {projects.map((project) => (
         <ProjectCard
           contribution={project.contribution}

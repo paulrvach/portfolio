@@ -32,7 +32,7 @@ interface SquareProps extends VariantProps<typeof squareVariants> {
 function Square({ contributions, variant, date }: SquareProps): JSX.Element {
   return (
     <Tooltip
-      content={`Date: ${date} \n Cont: ${contributions}`}
+      content={`${contributions} Contributions on ${date}`}
       className="w-full h-full"
     >
       <div className={cn(squareVariants({ variant }))} />
@@ -72,41 +72,41 @@ function GithubCard() {
     }
   };
 
-  useEffect(() => {
-    fetchData()
-      .then((data) => {
-        const len = data.weeks.length;
-        return data.weeks
-          .slice(len - 14, len)
-          .reduce(
-            (
-              accumulator: ContributionsCollection["contributionCalendar"]["weeks"],
-              currentValue: { contributionDays: ContributionDays[] } 
-            ) => [...accumulator, ...currentValue.contributionDays],
-            []
-          );
-      })
-      .then((result) => {
-        return result.map((obj: ContributionDays) => {
-          const amount =
-            obj.contributionCount >= 6 ? "6" : obj.contributionCount.toString();
-          return (
-            <Square
-              contributions={obj.contributionCount}
-              date={obj.date}
-              variant={amount as never}
-              key={obj.date}
-            />
-          );
-        });
-      })
-      .then((nodesArray: (typeof Square)[]) => {
-        console.log(nodesArray);
-        setContributions(
-          nodesArray.slice(nodesArray.length - 78, nodesArray.length)
-        );
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetchData()
+  //     .then((data) => {
+  //       const len = data.weeks.length;
+  //       return data.weeks
+  //         .slice(len - 14, len)
+  //         .reduce(
+  //           (
+  //             accumulator: ContributionsCollection["contributionCalendar"]["weeks"],
+  //             currentValue: { contributionDays: ContributionDays[] } 
+  //           ) => [...accumulator, ...currentValue.contributionDays],
+  //           []
+  //         );
+  //     })
+  //     .then((result) => {
+  //       return result.map((obj: ContributionDays) => {
+  //         const amount =
+  //           obj.contributionCount >= 6 ? "6" : obj.contributionCount.toString();
+  //         return (
+  //           <Square
+  //             contributions={obj.contributionCount}
+  //             date={obj.date}
+  //             variant={amount as never}
+  //             key={obj.date}
+  //           />
+  //         );
+  //       });
+  //     })
+  //     .then((nodesArray: (typeof Square)[]) => {
+  //       console.log(nodesArray);
+  //       setContributions(
+  //         nodesArray.slice(nodesArray.length - 78, nodesArray.length)
+  //       );
+  //     });
+  // }, []);
 
   return (
     <SocialCard

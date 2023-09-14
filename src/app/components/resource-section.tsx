@@ -10,7 +10,7 @@ const ResourceSection = ({
 }: HTMLAttributes<HTMLDivElement>): JSX.Element => {
   return (
     <div
-      className="grid grid-cols-3 grid-rows-6 grid-flow-row gap-3 w-1/2"
+      className="grid grid-cols-2 xl:grid-cols-3 grid-rows-6 grid-flow-row gap-3 w-full xl:w-1/2 "
       {...props}
     >
       <SocialCard
@@ -52,7 +52,7 @@ const ResourceSection = ({
             "url(https://res.cloudinary.com/dxmqknhgj/image/upload/v1694584803/Screenshot_2023-09-12_225950_cvmkck.png)",
           backgroundSize: "350%",
           backgroundPositionX: "-250px",
-          backgroundPositionY: "-120px",
+          backgroundPositionY: "-12pnpm 0px",
         }}
       >
         <div className="absolute">
