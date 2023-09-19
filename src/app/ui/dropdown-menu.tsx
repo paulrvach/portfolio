@@ -2,22 +2,22 @@
 import { MenuAnimation } from "./ping-lottie";
 import { useDrawerContext } from "../context/drawerCtx";
 
-type Props = {};
 
 const DropDown = () => {
   const { openDrawer, setOpenDrawer } = useDrawerContext();
+  console.log(openDrawer)
   const handleClick = () => {
     if (openDrawer) {
-      setOpenDrawer(!openDrawer);
+      setOpenDrawer(false);
     } else {
-      setOpenDrawer(!openDrawer);
+      setOpenDrawer(true);
     }
   };
 
   
 
   return (
-    <div onClick={handleClick} className="z-20">
+    <div onClick={handleClick} className="z-20 cursor-pointer">
       <MenuAnimation isOpen={openDrawer} />
     </div>
   );

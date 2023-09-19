@@ -12,7 +12,7 @@ import { cn } from "../utils/utils";
 import Link from "next/link";
 import { type Url } from "url";
 
-const card = cva("", {
+const card = cva("h-full", {
   variants: {
     colSpan: {
       "1": "col-span-1",
@@ -67,7 +67,7 @@ const SocialCard = ({
       variant="surface"
       {...props}
     >
-      <Flex direction={"column"} gap={"4"}>
+      <Flex direction={"column"} gap={"4"} height={'100%'}>
         <Flex
           gap={"2"}
           direction={colSpan === "1" ? "column" : "row"}
@@ -85,7 +85,7 @@ const SocialCard = ({
               </Text>
             </Heading>
           </Flex>
-          <Flex justify={"end"} width={"100%"}>
+          <Flex justify={"end"} width={"100%"} align={"end"} >
             <Link href={href}>
               {btnText && (
                 <Button
@@ -100,7 +100,7 @@ const SocialCard = ({
             </Link>
           </Flex>
         </Flex>
-        {children}
+        {children ? children: null}
       </Flex>
     </Card>
   );

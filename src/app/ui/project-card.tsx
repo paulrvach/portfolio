@@ -8,7 +8,8 @@ import {
   Link as RadixLink,
 } from "@radix-ui/themes";
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
-import Link from "next/link";
+import { useRouter } from 'next/navigation'
+
 
 interface ProjectCardProps extends ComponentProps<typeof RadixCard> {
   contribution: string;
@@ -17,6 +18,8 @@ interface ProjectCardProps extends ComponentProps<typeof RadixCard> {
   href: string;
 }
 
+
+
 const ProjectCard = ({
   contribution,
   title,
@@ -24,12 +27,18 @@ const ProjectCard = ({
   description,
   ...props
 }: ProjectCardProps): JSX.Element => {
+  const route = useRouter()
+
+  const handleClick = () => {
+    route.push(`/projects${href}`)
+  }
+
   return (
-    <Link href={href}>
     <RadixCard
       {...props}
       variant="ghost"
-      className="hover:bg-primary-foreground w-full select-none"
+      className="hover:bg-primary-foreground w-full select-none cursor-pointer"
+      onClick={handleClick}
     >
       <Flex direction={"column"} gap={"2"}>
         <Box>
@@ -43,7 +52,6 @@ const ProjectCard = ({
             {description}
           </Text>
           <RadixLink
-            href={href}
             size="2"
             weight="bold"
             underline="auto"
@@ -54,7 +62,6 @@ const ProjectCard = ({
         </Box>
       </Flex>
     </RadixCard>
-    </Link>
   );
 };
 

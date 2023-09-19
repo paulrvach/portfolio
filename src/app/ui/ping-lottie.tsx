@@ -35,7 +35,7 @@ function MenuAnimation({ isOpen }: Props) {
   const { View, playSegments } = useLottie(options, style);
 
   useEffect(() => {
-    if (isOpen) {
+    if (!isOpen) {
       playSegments([60, 100], true);
     } else {
       playSegments([10, 50], true);

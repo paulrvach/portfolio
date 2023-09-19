@@ -16,8 +16,8 @@ interface ContextProps {
 }
 
 const ThemeContext = createContext<ContextProps>({
-  theme: "dark",
-  setTheme: (): string => "dark",
+  theme: "inherit",
+  setTheme: (): string => 'inherit',
 
 });
 

@@ -2,7 +2,6 @@ import { HTMLAttributes } from "react";
 import { GithubCard } from "./github-card";
 import { SocialCard, PingingAnimation } from "@/src/app/ui";
 import { LinkedInLogoIcon } from "@radix-ui/react-icons";
-import { Tooltip } from "@radix-ui/themes";
 import Image from "next/image";
 
 const ResourceSection = ({

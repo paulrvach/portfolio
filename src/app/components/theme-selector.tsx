@@ -3,6 +3,7 @@ import { useThemeContext } from "../context/store";
 import {
   MoonIcon,
   SunIcon,
+  Component1Icon,
   DividerHorizontalIcon,
 } from "@radix-ui/react-icons";
 import { DropdownMenu, Text, Container, Box } from "@radix-ui/themes";
@@ -31,7 +32,9 @@ const ThemeSelector = (props: Props) => {
         <DropdownMenu.Trigger>
           <Box className="flex flex-col items-center relative  translate-y-[6.5rem] hover:-translate-y-0 focus:-translate-y-0 transition-transform duration-1000 border-[0.1px] border-[#e5e7eb] bg-neutral-600/20 backdrop-blur-xl  shadow-2xl px-12 pb-8 rounded-t-xl">
             <DividerHorizontalIcon className=" w-12 h-12  animate-bounce group-hover:animate-none transition-transform duration-500" />
-            <Text weight={"bold"} className="pb-2">Toggle Mode</Text>
+            <Text weight={"bold"} className="pb-2">
+              Toggle Mode
+            </Text>
             {themeButton[theme as never]}
           </Box>
         </DropdownMenu.Trigger>

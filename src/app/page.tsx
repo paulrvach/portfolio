@@ -1,9 +1,17 @@
 "use client";
-import React, { Suspense, useEffect, useState } from "react";
-import { ThemeSelector } from "./components/theme-selector";
+import React, { useEffect, useState, Suspense } from "react";
 import { ProjectSection, ResourceSection, HeroSection } from "./components";
+import { type NotionProperties } from "./layout";
 
-export default function Home() {
+const fetchFromNotion = async () => {
+  const res = await fetch("/api/notion");
+  const data = await res.json();
+  return data;
+};
+
+export default function Home({}: {}) {
+  const [notionData, setNotionData] = useState<NotionProperties[] | null>(null);
+
   useEffect(() => {
     (async () => {
       const LocomotiveScroll = (await import("locomotive-scroll")).default;
@@ -11,14 +19,20 @@ export default function Home() {
     })();
   }, []);
 
+  useEffect(() => {
+    (async () => {
+      const data = await fetchFromNotion();
+      setNotionData(data);
+    })();
+  }, []);
+
   return (
-    <div className="">
+    <div>
       <HeroSection />
       <div className=" flex flex-col gap-16 xl:flex-row mt-16 ">
-        <ProjectSection />
+        <ProjectSection params={notionData} />
         <ResourceSection />
       </div>
-      <ThemeSelector />
     </div>
   );
 }

@@ -1,11 +1,14 @@
+import { type HTMLAttributes } from "react";
 import "./globals.css";
 import "@radix-ui/themes/styles.css";
 import { Lato } from "next/font/google";
 import localFont from "next/font/local";
 import { ThemeContextProvider } from "./context/store";
+import { ThemeSelector } from "./components/theme-selector";
 import { DrawerContextProvider } from "./context/drawerCtx";
 import { NavBar } from "./components";
 import { Drawer } from "./ui";
+
 const vibes = Lato({ subsets: ["latin"], weight: ["400", "700", "900"] });
 export const sfPro = localFont({
   src: [
@@ -21,9 +24,17 @@ export const metadata = {
   description: "Portfolio",
 };
 
-// define callback function in server component pass callbackfunction
+export interface NotionProperties {
+  name: string;
+  summary: string;
+  team: string[];
+  responsabilities: string[];
+  contribution: string;
+  description: string;
+  id: string;
+}
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -34,7 +45,10 @@ export default function RootLayout({
         <DrawerContextProvider>
           <NavBar />
           <Drawer />
-          <ThemeContextProvider>{children}</ThemeContextProvider>
+          <ThemeContextProvider>
+            {children}
+            <ThemeSelector />
+          </ThemeContextProvider>
         </DrawerContextProvider>
       </body>
     </html>
