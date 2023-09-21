@@ -3,6 +3,7 @@ import About from "./about";
 import Intro from "./intro";
 import Identity from "./identity";
 import Tools from "./tools";
+import { ImageModal } from "ui";
 
 const AboutPage = () => {
   return (

@@ -5,7 +5,6 @@ import { useDrawerContext } from "../context/drawerCtx";
 
 const DropDown = () => {
   const { openDrawer, setOpenDrawer } = useDrawerContext();
-  console.log(openDrawer)
   const handleClick = () => {
     if (openDrawer) {
       setOpenDrawer(false);

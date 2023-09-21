@@ -12,8 +12,11 @@ import gsap from "gsap";
 import { Text } from "@radix-ui/themes";
 import { cn } from "../utils/utils";
 import { useRouter } from "next/navigation";
+import { ArrowLeftIcon } from "@radix-ui/react-icons";
+import { ContactForm } from "../components";
 
 const Drawer = () => {
+  const [isMenuLayout, setIsMenuLayout] = useState(true);
   const [selected, setSelected] = useState<number | null>(null);
   const { openDrawer, setOpenDrawer } = useDrawerContext();
   const ref = useRef<HTMLDivElement>(null);
@@ -77,16 +80,21 @@ const Drawer = () => {
         ref={ref}
       >
         <div className="flex flex-col gap-8 text-white dark:text-[rgb(24,24,22)] select-none text-6xl w-full ">
-          {menuItems.map((item) => (
-            <MenuItem
-              setOpenDrawer={setOpenDrawer}
-              handleHover={handleHover}
-              handleLeave={handleLeave}
-              item={item}
-              selected={selected}
-              key={item.name}
-            />
-          ))}
+          {isMenuLayout ? (
+            menuItems.map((item) => (
+              <MenuItem
+                setOpenDrawer={setOpenDrawer}
+                handleHover={handleHover}
+                handleLeave={handleLeave}
+                item={item}
+                selected={selected}
+                key={item.name}
+                setIsMenuLayout={setIsMenuLayout}
+              />
+            ))
+          ) : (
+            <ContactInput setIsMenuLayout={setIsMenuLayout} />
+          )}
         </div>
       </div>
 
@@ -99,27 +107,36 @@ const Drawer = () => {
   );
 };
 
+interface MenuItemProps {
+  item: { name: string; description: string; index: number; href: string };
+  selected: number | null;
+  setOpenDrawer: Dispatch<SetStateAction<boolean>>;
+  handleHover: (number: number | null) => void;
+  handleLeave: () => void;
+  setIsMenuLayout: Dispatch<SetStateAction<boolean>>;
+}
+
 function MenuItem({
   item,
   selected,
   setOpenDrawer,
   handleHover,
   handleLeave,
-}: {
-  item: { name: string; description: string; index: number; href: string };
-  selected: number | null;
-  setOpenDrawer: Dispatch<SetStateAction<boolean>>;
-  handleHover: (number: typeof selected) => void;
-  handleLeave: () => void;
-}) {
+  setIsMenuLayout,
+}: MenuItemProps) {
   const route = useRouter();
-  const handleClick = () => {
-    setOpenDrawer(false);
-    route.push(item.href);
+
+  const handleClick = (name: string) => {
+    if (name !== "Contact") {
+      setOpenDrawer(false);
+      route.push(item.href);
+    } else {
+      setIsMenuLayout(false);
+    }
   };
 
   return (
-    <div className="relative " onClick={handleClick}>
+    <div className="relative " onClick={() => handleClick(item.name)}>
       <Text
         onMouseEnter={() => handleHover(item.index)}
         onMouseLeave={handleLeave}
@@ -138,6 +155,25 @@ function MenuItem({
         </div>
         {item.name}
       </Text>
+    </div>
+  );
+}
+
+interface ContactInputProps {
+  setIsMenuLayout: Dispatch<SetStateAction<boolean>>;
+}
+
+function ContactInput({ setIsMenuLayout }: ContactInputProps) {
+  return (
+    <div className="flex flex-col">
+      
+      <ArrowLeftIcon
+        className="w-12 h-12  ml-9 z-30"
+        onClick={() => {
+          console.log("click")
+          setIsMenuLayout(true)}}
+      />
+      <ContactForm />
     </div>
   );
 }
