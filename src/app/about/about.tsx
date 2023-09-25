@@ -54,8 +54,17 @@ const About = () => {
       gsap.from(helloRef.current, {
         y: 100,
         stagger: 0.1,
-        onComplete: () =>
-          textOnComplete(helloRef.current, -50, parentRef.current),
+        onComplete: () => {
+          gsap.to(helloRef.current, {
+            y: -50,
+            scrollTrigger: {
+              trigger: parentRef.current,
+              start: "top",
+              end: "+=350",
+              scrub: true,
+            },
+          });
+        },
       });
 
       gsap.from(whoRef.current, {
@@ -67,8 +76,12 @@ const About = () => {
           end: "+=350px",
           scrub: true,
         },
-        onComplete: () =>
-          textOnComplete(whoRef.current, -70, helloRef.current, "+=150"),
+        onComplete: textOnComplete(
+          whoRef.current,
+          -70,
+          helloRef.current,
+          "+=150"
+        ),
       });
       gsap.from(aboutRef.current, {
         y: -170,
@@ -79,8 +92,12 @@ const About = () => {
           end: "+=350px",
           scrub: true,
         },
-        onComplete: () =>
-          textOnComplete(aboutRef.current, -70, whoRef.current, "+=150"),
+        onComplete: textOnComplete(
+          aboutRef.current,
+          -70,
+          whoRef.current,
+          "+=150"
+        ),
       });
       gsap.from(professionallyRef.current, {
         y: -170,

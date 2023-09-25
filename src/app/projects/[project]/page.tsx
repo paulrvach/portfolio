@@ -1,3 +1,4 @@
+//@ts-ignore
 import { type HTMLAttributes } from "react";
 import { Client } from "@notionhq/client";
 import ArticleHeader from "./article-header";
@@ -10,12 +11,10 @@ const notion = new Client({
   auth: notionSecret,
 });
 
-interface LayoutProps extends HTMLAttributes<HTMLDivElement> {
-  params: { project: string };
-}
+
 
 export interface FromatedResponse {
-  id?: string;
+  id: string;
   description: string;
   contribution: string;
   team: string[];
@@ -24,31 +23,26 @@ export interface FromatedResponse {
   name: string;
 }
 
-const ProjectPage = async ({ params }: LayoutProps) => {
+async function ProjectPage({ params }: { params: { project: string } }) {
   const pageId = params.project;
-  const pageProperties = await notion.pages.retrieve({ page_id: pageId });
+  // @ts-ignore
+  const pageProperties = (await notion.pages.retrieve({
+    page_id: pageId,
+  })) as any;
   // notion to markdown
   const n2m = new NotionToMarkdown({ notionClient: notion });
   const notionMarkdownString = async () => {
-    const mdblocks = await n2m.pageToMarkdown(pageId);
+    const mdblocks = (await n2m.pageToMarkdown(pageId)) as any;
     const mdString = n2m.toMarkdownString(mdblocks);
     return mdString.parent;
   };
   const markdown = await notionMarkdownString();
-  // const pageContents = [];
-  // for await (const block of iteratePaginatedAPI(notion.blocks.children.list, {
-  //   block_id: pageId,
-  // })) {
-  //   // Do something with block.
-  //   pageContents.push(block);
-  // }
-  // @ts-ignore
-  const { last_edited_time, icon, cover, id } = pageProperties;
+
+  const { last_edited_time, icon, cover } = pageProperties;
   const { description, contribution, team, summary, responsabilities, name } =
-    // @ts-ignore
     pageProperties.properties;
   const formatedResponse: FromatedResponse = {
-    id: id,
+    id: pageProperties.id,
     description: description.rich_text[0].plain_text,
     contribution: contribution.rich_text[0].plain_text,
     team: team.multi_select.map((teamate: { name: string }) => teamate.name),
@@ -70,6 +64,7 @@ const ProjectPage = async ({ params }: LayoutProps) => {
           last_edited_time={last_edited_time}
           icon={icon}
           description=""
+          id=""
         />
         <article className="prose  dark:prose-invert prose-img:rounded-2xl prose-img:shadow-md max-w-none mt-24">
           <Markdown>{markdown}</Markdown>
@@ -77,6 +72,6 @@ const ProjectPage = async ({ params }: LayoutProps) => {
       </div>
     </div>
   );
-};
+}
 
 export default ProjectPage;

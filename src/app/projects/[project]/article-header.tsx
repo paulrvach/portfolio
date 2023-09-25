@@ -6,7 +6,7 @@ import { Article } from "../../components";
 import Image from "next/image";
 import type { FromatedResponse } from "./page";
 
-interface Props extends FromatedResponse {
+interface ArticleSectionProps extends FromatedResponse {
   icon: { external: { url: string } };
   last_edited_time: Date;
 }
@@ -19,7 +19,7 @@ function ArticleSectionVariants({
   responsabilities,
   name,
   last_edited_time,
-}: Props): JSX.Element {
+}: ArticleSectionProps): JSX.Element {
   const dataArray = [
     { team: team },
     { responsabilities: responsabilities },

@@ -8,7 +8,9 @@ export function ContactForm() {
     message: "",
   });
 
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (
+    e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
 
     switch (name) {
@@ -40,7 +42,7 @@ export function ContactForm() {
         },
         body: JSON.stringify(inputValue),
       });
-      console.log(data)
+      console.log(data);
     } catch (error) {
       console.log(error);
     }

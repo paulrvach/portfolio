@@ -54,7 +54,7 @@ export const EmailTemplete = ({
                 <Text style={heading}>Hi, {name} thanks for sending me this message.</Text>
                 <Text style={review}>{message}</Text>
                 <Text style={paragraph}>
-                  I've been forwarded for this message and will be responding to your email at {email} shortly.
+                  I&apos;ve been forwarded for this message and will be responding to your email at {email} shortly.
                 </Text>
                 
                 <Text style={{ ...paragraph, paddingBottom: '16px' }}>

@@ -18,7 +18,7 @@ export const GET = async () => {
     });
 
     const restructured = query.results.map((item) => {
-      console.log(item)
+      console.log(item);
       // @ts-ignore
       const { properties, icon, cover, id, last_edited_time } = item;
       return {
@@ -30,7 +30,12 @@ export const GET = async () => {
         description: properties.description.rich_text[0].plain_text,
       };
     });
-    const sortedArray = restructured.sort((a, b) => new Date(b.last_edited_time) - new Date(a.last_edited_time));
+    const sortedArray = restructured.sort(
+      (a, b) =>
+        new Date(b.last_edited_time).getTime() -
+        new Date(a.last_edited_time).getTime()
+    );
+
     return NextResponse.json(sortedArray);
   } catch (error) {
     return NextResponse.json(error);

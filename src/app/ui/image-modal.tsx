@@ -67,7 +67,7 @@ function ImageModal({
     return () => {
       window.removeEventListener("mousemove", onMouseMove);
     };
-  }, []);
+  }, [parentDiv]);
 
   return (
     <div
