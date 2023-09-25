@@ -76,7 +76,7 @@ const ResourceSection = ({
         title="Dribble"
         icon={
           <Image
-            src="https://cdn-icons-png.flaticon.com/512/124/124037.png"
+            src="https://www.vectorico.com/wp-content/uploads/2018/02/Dribbble-Ball-Icon-300x300.png"
             alt="dribbble"
             className="w-12 h-12 rounded-lg"
             width={512}

@@ -8,13 +8,13 @@ export interface Tech {
 export const technologies: Tech[] = [
   {
     name: "Javascript",
-    src: "https://cdn-icons-png.flaticon.com/512/5968/5968292.png",
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsDxI08KhrPx6HHfIQdxILFjI--bni9ZBPCtG_hsqg4w&s",
     fallback: "JS",
     description: "A versatile scripting language used for web development.",
   },
   {
     name: "TypeScript",
-    src: "https://cdn-icons-png.flaticon.com/512/5968/5968381.png",
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQydgBPB5L19c3G7nU-RTJAMXEcWCYfyvU-jskDjTyWVA&s",
     fallback: "TS",
     description:
       "A statically typed superset of JavaScript for building robust applications.",
@@ -48,7 +48,7 @@ export const technologies: Tech[] = [
   },
   {
     name: "Docker",
-    src: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAC3CAMAAAAGjUrGAAAAkFBMVEX///8dY+3x8fMdZe0AVuwAWewLXewAWOyDo/QZYe27zPnc5vynvfcAU+wTX+3m7v3W4vspa+6Np/Sswff39/jy9v5tlPLI1/pcivF8nvMAT+uhufbN2/rr8f0ATOvl7f0AR+udtfaRrfVzmfO9zvk6de8AROtTgfC+zflahvE3ce5gjPGwxPdxlfJJfO9Vg/AHdnuLAAAEdklEQVR4nO3dbXOaShyGccBlERE0ChqNDzEPbTU56ff/dkd2iYq3qZHp/Jcz577euJmhnc1vENYNTT3PlAcsCHLvWF776v/biQNFDuWBfSXJSRYlJ8lphiNwPYuWtffgWXJeztMECmgC0QSjCUYTjCYYTTCaYDTBaILRBKMJRhOMJhhNMJpgNMFogtEEowlGE4wmGE0wmmA0wWiC0QSjCUYTjCYYTTCaYDTBaILRBKMJRhOMJhhNMJpgNMFogtEEowlGE4wmGE0wmmA0wWiC0QSjCUYTjCYYTTCaYDTBaILRBKMJRhOMJhhNMJpgNMFogtEEowlGE4wmGE0wmmA0wWiC0QQLvDb8Jol2lXs8Uc4qPXKeKadZjoAox/LqbUOUQ3lwHFGlrO6QByz4FPkX3YQ4YOpeQbYAAAAASUVORK5CYII=",
+    src: "https://www.svgrepo.com/show/331370/docker.svg",
     fallback: "D",
     description:
       "A platform for developing, shipping, and running applications in containers.",
@@ -74,13 +74,13 @@ export const technologies: Tech[] = [
   },
   {
     name: "Redux",
-    src: "https://miro.medium.com/v2/resize:fit:500/1*tOI6UCxDk3NMrw_P2uxN_g.png",
+    src: "https://miro.medium.com/v2/resize:fit:500/1*tOI6UC5EaS2fPItCesI-AQ.png",
     fallback: "R",
     description: "A state management library for JavaScript applications.",
   },
   {
     name: "Jest",
-    src: "https://cdn.freebiesupply.com/logos/large/2x/jest-logo-png-transparent.png",
+    src: "https://viget.imgix.net/jest.png?auto=format%2Ccompress&crop=focalpoint&fit=crop&fp-x=0.5&fp-y=0.5&ixlib=php-3.3.1&q=90&s=a6c20876868af5a7f83241353efc2495",
     fallback: "J",
     description: "A JavaScript testing framework developed by Facebook.",
   },
@@ -127,7 +127,7 @@ export const technologies: Tech[] = [
   },
   {
     name: "GitHub",
-    src: "https://cdn-icons-png.flaticon.com/512/25/25231.png",
+    src: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
     fallback: "GH",
     description:
       "A web-based platform for version control and collaboration, widely used for hosting and managing software projects.",
@@ -155,7 +155,7 @@ export const technologies: Tech[] = [
   },
   {
     name: "PostgreSQL",
-    src: "https://cdn-icons-png.flaticon.com/512/5968/5968342.png",
+    src: "https://static-00.iconduck.com/assets.00/postgresql-icon-248x256-vp8m9bqw.png",
     fallback: "PSQL",
     description:
       "An open-source relational database management system known for its reliability and extensibility.",
