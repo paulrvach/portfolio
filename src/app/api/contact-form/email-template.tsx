@@ -54,7 +54,7 @@ export const EmailTemplete = ({
                 <Text style={heading}>Hi, {name} thanks for sending me this message.</Text>
                 <Text style={review}>{message}</Text>
                 <Text style={paragraph}>
-                  I've been forwared this message and will be responding to your email at {email} shortly.
+                  I've been forwarded for this message and will be responding to your email at {email} shortly.
                 </Text>
                 
                 <Text style={{ ...paragraph, paddingBottom: '16px' }}>
@@ -89,12 +89,7 @@ export const EmailTemplete = ({
                   </Link>
                 </Text>
                 <Hr style={hr} />
-                <Text style={footer}>
-                  Airbnb, Inc., 888 Brannan St, San Francisco, CA 94103
-                </Text>
-                <Link href="https://airbnb.com" style={reportLink}>
-                  Report unsafe behavior
-                </Link>
+                
               </Row>
             </Section>
           </Container>

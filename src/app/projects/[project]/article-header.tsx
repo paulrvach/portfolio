@@ -88,7 +88,7 @@ function ArticleSectionVariants({
         </div>
       </Article.Header>
       <Article.Description
-        className="w-full"
+        className="w-full lg:flex lg:flex-col lg:gap-6"
         description={summary}
         ref={(el): void => {
           animInRefs.current[0] = el;
