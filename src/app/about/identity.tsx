@@ -44,7 +44,7 @@ const Identity = (props: Props) => {
             <Text size={"4"}>Free and Open Source Repos.</Text>
             <GitHubLogoIcon className="w-12 h-12" />
           </div>
-          <Link href="" className="hover:underline cursor-pointer text-5xl">
+          <Link href="https://github.com/paulrvach" className="hover:underline cursor-pointer text-5xl">
             GITHUB
           </Link>
         </div>
@@ -54,7 +54,7 @@ const Identity = (props: Props) => {
           <div className="flex flex-row w-full justify-between">
             <Text size={"4"}>Check out my latest designs.</Text>
           </div>
-          <Link href="" className="hover:underline cursor-pointer text-3xl">
+          <Link href="https://dribbble.com/paulrvach" className="hover:underline cursor-pointer text-3xl">
             DRIBBBLE
           </Link>
         </div>
@@ -65,7 +65,7 @@ const Identity = (props: Props) => {
             <Text size={"4"}>Let&apos;s connect.</Text>
             <LinkedInLogoIcon className="w-12 h-12" />
           </div>
-          <Link href="" className="hover:underline cursor-pointer text-3xl">
+          <Link href="https://www.linkedin.com/in/paul-vachon/" className="hover:underline cursor-pointer text-3xl">
             LINKEDIN
           </Link>
         </div>
