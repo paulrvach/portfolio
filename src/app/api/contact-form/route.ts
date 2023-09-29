@@ -18,16 +18,16 @@ export const POST = async (request: Request) => {
         message,
       }),
     });
-    // const toMe = await resend.emails.send({
-    //   from: "paul@paulvachon.dev",
-    //   to: 'paulrvach@gmail.com',
-    //   subject: "Thanks for getting in touch!",
-    //   react: EmailTemplete({
-    //     name,
-    //     email,
-    //     message,
-    //   }),
-    // });
+    const toMe = await resend.emails.send({
+      from: "paul@paulvachon.dev",
+      to: 'paulrvach@gmail.com',
+      subject: "New email from: " + email,
+      react: EmailTemplete({
+        name,
+        email,
+        message,
+      }),
+    });
     return NextResponse.json(toSender);
   } catch (error) {
     return NextResponse.json({ error });

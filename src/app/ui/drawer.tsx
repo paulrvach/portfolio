@@ -165,7 +165,7 @@ interface ContactInputProps {
 
 function ContactInput({ setIsMenuLayout }: ContactInputProps) {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col mt-[48px]">
       
       <ArrowLeftIcon
         className="w-12 h-12  ml-9 z-30"

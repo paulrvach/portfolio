@@ -28,7 +28,7 @@ const ResourceSection = ({
       />
       <SocialCard
         btnText="View"
-        href=""
+        href="https://paperplane-ui.vercel.app/"
         btnVariant="soft"
         colSpan={"1"}
         icon={

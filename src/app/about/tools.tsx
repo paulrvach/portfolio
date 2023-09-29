@@ -6,7 +6,7 @@ import { MenuItem, ImageModal } from "ui";
 import localFont from "next/font/local";
 import { Lato } from "next/font/google";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
-
+import { useRouter } from "next/navigation";
 
 const lato = Lato({ subsets: ["latin"], weight: ["400", "700", "900"] });
 
@@ -24,7 +24,7 @@ type Props = {};
 const Tools = (props: Props) => {
   const [selected, setSelected] = useState<number | null>(null);
   const containerDiv = useRef<HTMLDivElement>(null);
-
+  const router = useRouter();
   const handleHover = (number: typeof selected) => {
     setSelected(number);
   };
@@ -35,16 +35,26 @@ const Tools = (props: Props) => {
   return (
     <div className="w-full h-screen mt-24">
       <div className="w-full grid grid-flow-col grid-cols-2">
-        <Heading as="h2" className="col-span-1 px-4 py-2" weight={"light"} size={"7"}>
+        <Heading
+          as="h2"
+          className="col-span-1 px-4 py-2"
+          weight={"light"}
+          size={"7"}
+        >
           Contributions
         </Heading>
-        <Heading as="h2" className="col-span-1 px-4 py-2" weight={"light"} size={"7"}>
+        <Heading
+          as="h2"
+          className="col-span-1 px-4 py-2"
+          weight={"light"}
+          size={"7"}
+        >
           Technologies
         </Heading>
       </div>
-      <div className="w-full h-4/5 grid-flow-col gap-2 grid grid-cols-2 grid-rows-4">
+      <div className="w-full h-4/5 lg:grid-flow-col gap-4 lg:grid lg:grid-cols-2 lg:grid-rows-4 flex flex-col">
         <div
-          className="col-span-1 row-span-2 rounded-2xl overflow-hidden bg-cover bg-backdropFilter-blur"
+          className="col-span-1 row-span-2 rounded-2xl overflow-hidden bg-cover bg-backdropFilter-blur min-h-[246px]"
           style={{
             backgroundImage:
               'url("https://res.cloudinary.com/dxmqknhgj/image/upload/v1695244022/background_djecy3.png")',
@@ -67,7 +77,13 @@ const Tools = (props: Props) => {
                 <Text>creator & maintainer</Text>
               </div>
               <div className="flex w-full items-end justify-end pr-2">
-                <Button variant="ghost" size={"3"}>
+                <Button
+                  variant="ghost"
+                  size={"3"}
+                  onClick={() => {
+                    router.push("https://paperplane-ui.vercel.app/");
+                  }}
+                >
                   go to website <ArrowRightIcon className="w-4 h-4" />
                 </Button>
               </div>
@@ -75,7 +91,7 @@ const Tools = (props: Props) => {
           </div>
         </div>
         <div
-          className="col-span-1 row-span-2 rounded-2xl overflow-hidden bg-cover bg-backdropFilter-blur"
+          className="col-span-1 row-span-2 rounded-2xl overflow-hidden bg-cover bg-backdropFilter-blur min-h-[246px]"
           style={{
             backgroundImage:
               'url("https://res.cloudinary.com/dxmqknhgj/image/upload/v1695251796/Frame_42_mgjmv3.png")',
@@ -98,7 +114,7 @@ const Tools = (props: Props) => {
                 <Text>maintainer</Text>
               </div>
               <div className="flex w-full items-end justify-end pr-2">
-                <Button variant="ghost" size={"3"}>
+                <Button variant="ghost" size={"3"} onClick={() => {}}>
                   go to website <ArrowRightIcon className="w-4 h-4" />
                 </Button>
               </div>

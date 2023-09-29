@@ -10,7 +10,7 @@ type Props = {};
 
 const Identity = (props: Props) => {
   return (
-    <div className="w-full h-96 grid grid-cols-5 grid-rows-2 grid-flow-col gap-2">
+    <div className="w-full lg:h-96 grid grid-cols-2 grid-rows-6 lg:grid-cols-5 lg:grid-rows-2 lg:grid-flow-col gap-2">
       <div className="col-span-1 row-span-2 rounded-xl bg-amber-400 overflow-hidden">
         <Image
           src="https://res.cloudinary.com/dxmqknhgj/image/upload/v1691169386/DD4580EF-6A04-4FAF-B11A-8C32B62075FA_qidgxh.jpg"
@@ -20,9 +20,9 @@ const Identity = (props: Props) => {
           className="object-cover h-full w-full"
         />
       </div>
-      <div className="col-span-2 row-span-2 rounded-xl bg-primary text-secondary p-5">
+      <div className="lg:col-span-2 row-span-2 rounded-xl bg-primary text-secondary p-5">
         <div className="flex flex-col justify-between w-full h-full">
-          <h2 className="flex flex-wrap text-[64px] leading-none ">
+          <h2 className="flex flex-wrap text-[2rem] lg:text-[64px] leading-none ">
             FRONTEND & DESIGN ENGINEER
           </h2>
           <div className="flex flex-row w-full items-center justify-between">
