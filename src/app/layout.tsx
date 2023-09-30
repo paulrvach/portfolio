@@ -1,4 +1,3 @@
-import { type HTMLAttributes } from "react";
 import "./globals.css";
 import "@radix-ui/themes/styles.css";
 import { Lato } from "next/font/google";
@@ -44,7 +43,7 @@ export default async function RootLayout({
       <body className={`${sfPro.className} relative `}>
         <DrawerContextProvider>
           <NavBar />
-            <Drawer />
+            {/* <Drawer /> */}
           <ThemeContextProvider>
             {children}
             <ThemeSelector />

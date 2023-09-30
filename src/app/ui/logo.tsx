@@ -1,11 +1,17 @@
-import {type HTMLAttributes} from "react";
+import { type HTMLAttributes } from "react";
 
-interface LogoProps extends HTMLAttributes<HTMLDivElement>{
-    width?: string
-    height?: string
-};
+interface LogoProps extends HTMLAttributes<HTMLDivElement> {
+  width?: string;
+  height?: string;
+  color?: string;
+}
 
-const Logo = ({height = "100" , width ="100", ...props}: LogoProps) => {
+const Logo = ({
+  height = "100",
+  width = "100",
+  color = "hsl(43.15,100%,65.1%)",
+  ...props
+}: LogoProps) => {
   return (
     <div {...props}>
       <svg
@@ -21,7 +27,7 @@ const Logo = ({height = "100" , width ="100", ...props}: LogoProps) => {
             cy="32.7102"
             r="19"
             transform="rotate(-90 49.9033 32.7102)"
-            stroke="hsl(43.15,100%,65.1%)"
+            stroke={color}
             strokeWidth="3"
           />
           <circle
@@ -29,7 +35,7 @@ const Logo = ({height = "100" , width ="100", ...props}: LogoProps) => {
             cy="70.7102"
             r="19"
             transform="rotate(-90 49.9033 70.7102)"
-            stroke="hsl(43.15,100%,65.1%)"
+            stroke={color}
             strokeWidth="3"
           />
           <circle
@@ -37,7 +43,7 @@ const Logo = ({height = "100" , width ="100", ...props}: LogoProps) => {
             cy="51.7102"
             r="19"
             transform="rotate(-90 30.9033 51.7102)"
-            stroke="hsl(43.15,100%,65.1%)"
+            stroke={color}
             strokeWidth="3"
           />
           <circle
@@ -45,7 +51,7 @@ const Logo = ({height = "100" , width ="100", ...props}: LogoProps) => {
             cy="51.7102"
             r="19"
             transform="rotate(-90 69.483 51.7102)"
-            stroke="hsl(43.15,100%,65.1%)"
+            stroke={color}
             strokeWidth="3"
           />
         </g>
