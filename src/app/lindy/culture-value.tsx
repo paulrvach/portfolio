@@ -1,12 +1,12 @@
-import { Text } from "@radix-ui/themes";
-import React, { HTMLAttributes, useState } from "react";
+import { Quote, Text } from '@radix-ui/themes';
+import React, { HTMLAttributes, useState } from 'react';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "ui";
-import { cn } from "../utils/utils";
+} from 'ui';
+import { cn } from '../utils/utils';
 
 interface CultureValueProps extends HTMLAttributes<HTMLDivElement> {
   values: Values[];
@@ -15,6 +15,8 @@ interface CultureValueProps extends HTMLAttributes<HTMLDivElement> {
 type Values = {
   value: string;
   experiences: string;
+  quote?: string;
+  links: JSX.Element[]
 };
 
 const CultureValue = ({ values, className }: CultureValueProps) => {
@@ -27,7 +29,7 @@ const CultureValue = ({ values, className }: CultureValueProps) => {
   };
 
   return (
-    <Accordion type="single" collapsible>
+    <Accordion type='single' collapsible>
       {values.map((value) => (
         <AccordionItem
           value={value.value}
@@ -35,13 +37,19 @@ const CultureValue = ({ values, className }: CultureValueProps) => {
           onFocus={() => handleHover(value.value)}
           onBlur={handleLeave}
           className={cn(
-            focused === value.value ? "bg-white text-black" : "",
-            "transition-all duration-200 px-4",
+            focused === value.value ? 'bg-white text-black' : '',
+            'transition-all duration-200 px-4',
             className
           )}
         >
           <AccordionTrigger>{value.value}</AccordionTrigger>
-          <AccordionContent>{value.experiences}</AccordionContent>
+          <AccordionContent>
+            <div className='prose'>
+              {value.quote && <Quote>{value.quote}</Quote>}
+              <p>{value.experiences}</p>
+              {value.links && <div className='flex flex-col gap-2'>{value.links}</div>}
+            </div>
+          </AccordionContent>
         </AccordionItem>
       ))}
     </Accordion>

@@ -5,22 +5,22 @@ import {
   Dispatch,
   SetStateAction,
   useEffect,
-} from "react";
-import { Text } from "@radix-ui/themes";
-import { cn } from "../utils/utils";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useInView } from "react-intersection-observer";
+} from 'react';
+import { Text } from '@radix-ui/themes';
+import { cn } from '../utils/utils';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useInView } from 'react-intersection-observer';
 
 interface ExperienceSectionProps extends HTMLAttributes<HTMLDivElement> {
   heading: string;
-  description: string;
+  experiences: JSX.Element;
   video: string;
   setCurrentVideo: Dispatch<SetStateAction<string>>;
 }
 const ExperienceSlide = ({
   heading,
-  description,
+  experiences,
   className,
   video,
   setCurrentVideo,
@@ -37,8 +37,8 @@ const ExperienceSlide = ({
         opacity: 0,
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "-=300",
-          end: "top",
+          start: '-=300',
+          end: 'top',
           scrub: true,
           onEnter: () => {
             setCurrentVideo(video);
@@ -59,20 +59,20 @@ const ExperienceSlide = ({
   return (
     <div
       className={cn(
-        "flex flex-col h-screen w-full gap-4 justify-center",
+        'flex flex-col h-screen w-full gap-4 justify-center',
         className
       )}
       ref={containerRef}
       {...props}
     >
-      <Text size={"3"} ref={ref}>
+      <Text size={'3'} ref={ref}>
         {heading}:
       </Text>
-      <Text size={"8"}>{description}</Text>
+      {experiences}
     </div>
   );
 };
 
-ExperienceSlide.displayName = "ExperienceSlide";
+ExperienceSlide.displayName = 'ExperienceSlide';
 
 export default ExperienceSlide;
