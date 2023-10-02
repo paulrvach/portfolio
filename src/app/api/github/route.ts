@@ -1,3 +1,4 @@
+import { NextApiRequest } from "next";
 import { NextResponse } from "next/server";
 const TOKEN = process.env.GITHUB_TOKEN;
 
@@ -38,10 +39,12 @@ export const GET = async (request: Request) => {
       },
       body: JSON.stringify(body),
     });
-    const githubData = await res.json()
-    console.log(githubData)
+    const githubData = await res.json();
+    console.log(githubData);
     return NextResponse.json(githubData);
   } catch (error) {
     return NextResponse.json(error);
   }
 };
+
+
