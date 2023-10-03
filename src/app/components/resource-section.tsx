@@ -1,7 +1,7 @@
 import { HTMLAttributes } from "react";
 import { GithubCard } from "./github-card";
 import { SocialCard, PingingAnimation } from "@/src/app/ui";
-import { LinkedInLogoIcon } from "@radix-ui/react-icons";
+import { LinkedInLogoIcon, FileTextIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
 import { cn } from "../utils/utils";
 
@@ -32,11 +32,12 @@ const ResourceSection = ({
         btnText="View"
         href="https://paperplane-ui.vercel.app/"
         btnVariant="soft"
+        btnColor="amber"
         colSpan={"1"}
         icon={
           <Image
             src="https://res.cloudinary.com/dxmqknhgj/image/upload/v1692744161/ButtonIcon-gray_yae3pe.png"
-            alt="dribbble"
+            alt="paper"
             className="w-12 h-12 rounded-lg"
             width={512}
             height={512}
@@ -91,6 +92,24 @@ const ResourceSection = ({
         btnVariant="soft"
         btnColor="pink"
         style={{ backgroundColor: "rgb(236,73,137,5%)" }}
+      />
+      <SocialCard
+        btnText="view"
+        title="Resume"
+        icon={ <Image
+          src="https://cdn-icons-png.flaticon.com/512/5968/5968517.png"
+          alt="docs"
+          className="w-12 h-12 rounded-lg"
+          width={512}
+          height={512}
+        />
+        }
+        href="https://docs.google.com/document/d/1o2fR-mZt_Nbgnej3ojpqrjWmGJ4ZFvBYGqsPUa2vvJQ/edit"
+        colSpan={"1"}
+        rowSpan={"1"}
+        btnVariant="soft"
+        btnColor="sky"
+        style={{ backgroundColor: "rgba(0,134,248,5%)" }}
       />
     </div>
   );

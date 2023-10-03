@@ -21,22 +21,21 @@ const IntroSection = (props: Props) => {
       !
     </Text>,
     <Text key="fit" size={"8"} className="flex gap-2">
-      My name is 
-      <Code className="flex">
+      My name is
+      <div className="flex ">
         <Logo height="35" width="35" color="#9aede4" />
-        Paul
-      </Code>
-      ,
+        Paul,
+      </div>
     </Text>,
     <Text key="fit" size={"8"}>
       I'm a full stack software engineer.
     </Text>,
     <Text key="fit" size={"8"}>
-      And this is why I think im the right fit for
+      And this is why I think im the right fit for 
     </Text>,
-    <Code key="role" size={"8"}>
-      Jr. Software Engineer, Full Stack
-    </Code>,
+    <Text key="role" size={"8"}>
+      Jr. Software Engineer, Full Stack role.
+    </Text>,
   ];
 
   useLayoutEffect(() => {
