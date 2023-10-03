@@ -8,7 +8,7 @@ const MeSection = (props: Props) => {
     <div className="flex w-full h-screen justify-around mt-48">
       <div className="h-2/3 flex flex-col justify-between w-full">
         <Text size={"6"}>Thank you!</Text>
-        <Text>Lorem Ipsum</Text>
+        <Text mr={"2"}>I believe Lindy.ai has the potential to remove the barriers that workplaces face when having to learn and adopt new software systems. As someone who wholeheartedly supports this mission, I am enthusiastic about contributing to the development of innovative software that has the potential to revolutionize the way we work and interact with our devices.</Text>
         <div className="flex flex-col gap-2">
           <div className="flex gap-2">
             <EnvelopeClosedIcon className="w-5 h-5" />
