@@ -37,7 +37,7 @@ const ThemeContextProvider = ({ children }: HTMLAttributes<HTMLDivElement>) => {
         appearance={theme}
         accentColor={accentColor}
         radius="full"
-        className="mx-8 md:mx-32 2xl:mx-80"
+        className="mx-8 md:mx-32 2xl:mx-40"
       >
         {children}
       </Theme>
