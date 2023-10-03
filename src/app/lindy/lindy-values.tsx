@@ -1,7 +1,14 @@
 import Link from 'next/link';
 import { ArrowRightIcon, NotionLogoIcon } from '@radix-ui/react-icons';
 
-export const values = [
+type Values = {
+  value: string;
+  experiences: string;
+  quote?: string;
+  links?: JSX.Element[]
+};
+
+export const values: Values[] = [
   {
     value: 'An elite institution',
     experiences:

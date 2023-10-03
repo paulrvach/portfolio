@@ -59,7 +59,7 @@ const ExperienceSlide = ({
   return (
     <div
       className={cn(
-        'flex flex-col h-screen w-full gap-4 justify-center',
+        'flex flex-col h-screen w-full gap-8 justify-center',
         className
       )}
       ref={containerRef}

@@ -3,14 +3,16 @@ import { GithubCard } from "./github-card";
 import { SocialCard, PingingAnimation } from "@/src/app/ui";
 import { LinkedInLogoIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
+import { cn } from "../utils/utils";
 
 const ResourceSection = ({
+  className,
   children,
   ...props
 }: HTMLAttributes<HTMLDivElement>): JSX.Element => {
   return (
     <div
-      className="grid grid-cols-2 xl:grid-cols-3 grid-rows-6 grid-flow-row gap-3 w-full xl:w-1/2 "
+      className={cn("grid grid-cols-2 xl:grid-cols-3 grid-rows-6 grid-flow-row gap-3 w-full xl:w-1/2", className)}
       {...props}
     >
       <SocialCard

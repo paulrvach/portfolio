@@ -6,6 +6,7 @@ import IntroSection from "./intro-section";
 import { useThemeContext } from "../context/store";
 
 import LindyLogo from "./lindy-logo";
+import MeSection from "./me-sections";
 
 const LindyApplication = () => {
   const { setAccentColor } = useThemeContext();
@@ -29,8 +30,11 @@ const LindyApplication = () => {
         <div id="experience-section" className="flex  w-full z-20">
           <ExperienceSection />
         </div>
-        <div id="culture-section" className="flex h-screen w-full">
+        <div id="culture-section" className="flex  w-full">
           <CultureSection />
+        </div>
+        <div id="me-section" className="flex h-screen w-full">
+          <MeSection />
         </div>
       </div>
     </div>

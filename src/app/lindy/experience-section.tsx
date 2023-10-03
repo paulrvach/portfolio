@@ -6,6 +6,7 @@ import gsap from 'gsap';
 import { Avatar, Text } from '@radix-ui/themes';
 import Link from 'next/link';
 import { Logo } from '../ui';
+import { HomeIcon } from '@radix-ui/react-icons';
 
 const experiences = [
   {
@@ -68,18 +69,13 @@ const experiences = [
           </Link>
         </div>
         <div className='flex flex-col w-full gap-4' key={'reusable-components'}>
-          <Text size={'8'}>Building Really Reusable Components.</Text>
+          <Text size={'8'}>Node.js Asynchronous Backend</Text>
           <Link
-            href='/projects/990ef71f-f207-4318-b267-cb5746571f37#operability-scalability-maintainability'
+            href='/projects/f9472791-b72a-4d2c-b853-05dcf3170df6#converting-a-python-automation-script-to-a-full-stack-application'
             className='flex gap-1'
           >
-            <Avatar
-              src='https://res.cloudinary.com/dxmqknhgj/image/upload/v1692744161/ButtonIcon-gray_yae3pe.png'
-              fallback='P'
-              radius='none'
-              size={'1'}
-            />
-            Operability, Scalability, Maintainability
+            <HomeIcon className='w-5 h-5'/>
+            Converting from Python
           </Link>
         </div>
       </div>

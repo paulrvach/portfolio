@@ -16,7 +16,7 @@ type Values = {
   value: string;
   experiences: string;
   quote?: string;
-  links: JSX.Element[]
+  links?: JSX.Element[]
 };
 
 const CultureValue = ({ values, className }: CultureValueProps) => {
