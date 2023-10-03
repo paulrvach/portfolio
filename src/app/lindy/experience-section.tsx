@@ -47,7 +47,7 @@ const experiences = [
     ),
 
     video:
-      "https://res.cloudinary.com/dpqdqryvo/video/upload/v1685814776/test-demo-kafka_szbixp.mov",
+      "https://res.cloudinary.com/dxmqknhgj/video/upload/v1696362019/Badge_paperplane-ui_-_Google_Chrome_2023-10-03_12-38-38_o9j9uf.mp4",
   },
   {
     heading: "Backend Experinece",
