@@ -25,7 +25,7 @@ const LindyApplication = () => {
       <div className="">
         <div id="intro-section" className="flex h-screen w-full">
           <IntroSection />
-          {/* <LindyLogo /> */}
+          <LindyLogo />
         </div>
         <div id="experience-section" className="flex  w-full z-20">
           <ExperienceSection />
