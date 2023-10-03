@@ -28,7 +28,7 @@ const IntroSection = (props: Props) => {
       </div>
     </Text>,
     <Text key="fit" size={"8"}>
-      I'm a full stack software engineer.
+      {"I'm a full stack software engineer."}
     </Text>,
     <Text key="fit" size={"8"}>
       And this is why I think im the right fit for 

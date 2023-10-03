@@ -1,13 +1,12 @@
 import { EnvelopeClosedIcon, MobileIcon } from "@radix-ui/react-icons";
 import { ResourceSection } from "../components";
 import { Heading, Text } from "@radix-ui/themes";
-import { PhoneNumber } from "libphonenumber-js";
 type Props = {};
 
 const MeSection = (props: Props) => {
   return (
-    <div className="flex w-full h-screen justify-between items-center align-middle">
-      <div className="h-2/3 flex flex-col justify-between">
+    <div className="flex w-full h-screen justify-around mt-48">
+      <div className="h-2/3 flex flex-col justify-between w-full">
         <Text size={"6"}>Thank you!</Text>
         <Text>Lorem Ipsum</Text>
         <div className="flex flex-col gap-2">
@@ -21,7 +20,9 @@ const MeSection = (props: Props) => {
           </div>
         </div>
       </div>
-        <ResourceSection/>
+      <div className="w-full">
+        <ResourceSection className="xl:w-full"/>
+        </div>
     </div>
   );
 };

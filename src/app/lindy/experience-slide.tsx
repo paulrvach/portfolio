@@ -50,7 +50,7 @@ const ExperienceSlide = ({
     return () => {
       ctx.revert();
     };
-  }, []);
+  }, [setCurrentVideo, video]);
 
   useEffect(() => {
     inView && setCurrentVideo(video);

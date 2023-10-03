@@ -43,7 +43,7 @@ export default async function RootLayout({
       <body className={`${sfPro.className} relative `}>
         <DrawerContextProvider>
           <NavBar />
-            {/* <Drawer /> */}
+            <Drawer />
           <ThemeContextProvider>
             {children}
             <ThemeSelector />
