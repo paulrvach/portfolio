@@ -9,16 +9,16 @@ import LindyLogo from "./lindy-logo";
 import MeSection from "./me-sections";
 
 const LindyApplication = () => {
-  const { setAccentColor } = useThemeContext();
+  // const { setAccentColor } = useThemeContext();
 
   useEffect(() => {
-    setAccentColor("blue");
+    // setAccentColor("blue");
 
     (async () => {
       const LocomotiveScroll = (await import("locomotive-scroll")).default;
       const locomotiveScroll = new LocomotiveScroll();
     })();
-  }, [setAccentColor]);
+  }, []);
 
   return (
     <div className="w-full flex justify-between ">

@@ -101,7 +101,6 @@ function GithubCard() {
         });
       })
       .then((nodesArray: (typeof Square)[]) => {
-        console.log(nodesArray);
         setContributions(
           nodesArray.slice(nodesArray.length - 78, nodesArray.length)
         );
